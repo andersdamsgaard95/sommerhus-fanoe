@@ -4,7 +4,7 @@ Kald på variabel: partial.$variabel-navn;
 Kald på mixin: @include partial.mixin-navn;
 */
 @import url("https://fonts.cdnfonts.com/css/niagara-engraved");
-@import url("https://fonts.cdnfonts.com/css/abhaya-libre-2");
+@import url("https://fonts.cdnfonts.com/css/caladea");
 * {
   margin: 0;
   box-sizing: border-box;
@@ -12,7 +12,7 @@ Kald på mixin: @include partial.mixin-navn;
 
 html {
   font-size: 18px;
-  font-family: "Abhaya Libre", sans-serif;
+  font-family: "Caladea", sans-serif;
 }
 
 p {
@@ -176,7 +176,7 @@ body main {
   grid-row: 1/2;
 }
 body main #hero {
-  height: 600px;
+  height: 650px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -196,11 +196,14 @@ body main #hero img {
 }
 body main #hero #hero-text {
   position: absolute;
-  top: 120px;
-  left: 10px;
-  max-width: 700px;
+  bottom: 50px;
+  right: 0;
   padding-left: 100px;
   padding-right: 100px;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 @media screen and (max-width: 900px) {
   body main #hero #hero-text {
@@ -214,67 +217,11 @@ body main #hero #hero-text {
     padding-right: 10px;
   }
 }
-@media screen and (max-width: 750px) {
-  body main #hero #hero-text {
-    bottom: 100px;
-  }
-}
 body main #hero #hero-text h2 {
-  color: #364626;
+  text-align: end;
 }
-body main #hero #stats {
-  background-color: #364626;
-  position: absolute;
-  top: 90%;
-  left: 200px;
-  right: 200px;
-  padding: 50px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-@media screen and (max-width: 1200px) {
-  body main #hero #stats {
-    left: 100px;
-    right: 100px;
-  }
-}
-@media screen and (max-width: 900px) {
-  body main #hero #stats {
-    left: 50px;
-    right: 50px;
-  }
-}
-@media screen and (max-width: 700px) {
-  body main #hero #stats {
-    left: 10px;
-    right: 10px;
-  }
-}
-body main #hero #stats h3 {
-  text-align: center;
-  color: #F9F2D7;
-  grid-column: 1/4;
-  padding-bottom: 50px;
-}
-body main #hero #stats #sommerhuset-stats {
-  grid-column: 1/2;
-}
-body main #hero #stats #husets-regler-stats {
-  grid-column: 2/3;
-}
-body main #hero #stats #inkluderet-stats {
-  grid-column: 3/4;
-}
-body main #hero #stats .stats-kategorier {
-  color: #F9F2D7;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-body main #hero #stats .stats-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+body main #hero #hero-text a {
+  align-self: end;
 }
 body footer {
   grid-row: 2/3;
