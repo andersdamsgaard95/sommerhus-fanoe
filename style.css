@@ -1,0 +1,282 @@
+@charset "UTF-8";
+/* 
+Kald på variabel: partial.$variabel-navn;
+Kald på mixin: @include partial.mixin-navn;
+*/
+@import url("https://fonts.cdnfonts.com/css/niagara-engraved");
+@import url("https://fonts.cdnfonts.com/css/abhaya-libre-2");
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  font-family: "Abhaya Libre", sans-serif;
+}
+
+p {
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  word-break: break-word;
+}
+
+h2 {
+  font-size: 1.8rem;
+  word-break: break-word;
+}
+
+h3 {
+  font-size: 1.6rem;
+  word-break: break-word;
+}
+
+.cta {
+  background-color: black;
+  color: white;
+  padding: 10px 30px 10px 30px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 10px;
+}
+.cta:hover {
+  background-color: grey;
+}
+
+.ygrid {
+  display: grid;
+  grid-template-columns: 0 1fr 0;
+}
+@media screen and (min-width: 1500px) {
+  .ygrid {
+    grid-template-columns: 1fr 1500px 1fr;
+  }
+}
+
+.content {
+  grid-column: 2/3;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 1fr 100px;
+  min-height: 100vh;
+  background-color: #F9F2D7;
+}
+body header {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding-top: 20px;
+}
+body header #global-nav {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+@media screen and (max-width: 900px) {
+  body header #global-nav {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body header #global-nav {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+body header #global-nav #logo {
+  grid-column: 1/2;
+  text-decoration: none;
+  justify-self: start;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: end;
+}
+body header #global-nav #logo h1 {
+  font-family: "Niagara Engraved", sans-serif;
+  font-weight: normal;
+  font-size: 2.5rem;
+  color: #364626;
+}
+body header #global-nav #logo img {
+  height: 4rem;
+}
+body header #global-nav #header-nav {
+  grid-column: 2/3;
+  justify-self: end;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+@media screen and (max-width: 750px) {
+  body header #global-nav #header-nav {
+    display: none;
+  }
+}
+body header #global-nav #header-nav a {
+  font-family: "Niagara Engraved", sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #364626;
+  transition: all 0.3s;
+}
+body header #global-nav #header-nav a:hover {
+  scale: 120%;
+}
+body header #global-nav #burger-menu {
+  display: none;
+  grid-column: 2/3;
+  justify-self: end;
+  align-self: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 750px) {
+  body header #global-nav #burger-menu {
+    display: block;
+  }
+}
+body header #global-nav #burger-menu img {
+  height: 1rem;
+}
+body header #global-nav #burger-nav {
+  display: none;
+  flex-direction: column;
+  gap: 75px;
+  padding: 50px 20px 50px 20px;
+  background-color: #364626;
+  z-index: 1;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 100%;
+  max-width: 300px;
+}
+body header #global-nav #burger-nav a {
+  text-decoration: none;
+  color: #F9F2D7;
+  font-family: "Niagara Engraved", sans-serif;
+  font-size: 1.5rem;
+}
+body main {
+  grid-row: 1/2;
+}
+body main #hero {
+  height: 600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+@media screen and (max-width: 750px) {
+  body main #hero {
+    height: 400px;
+  }
+}
+body main #hero img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body main #hero #hero-text {
+  position: absolute;
+  top: 120px;
+  left: 10px;
+  max-width: 700px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+@media screen and (max-width: 900px) {
+  body main #hero #hero-text {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main #hero #hero-text {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media screen and (max-width: 750px) {
+  body main #hero #hero-text {
+    bottom: 100px;
+  }
+}
+body main #hero #hero-text h2 {
+  color: #364626;
+}
+body main #hero #stats {
+  background-color: #364626;
+  position: absolute;
+  top: 90%;
+  left: 200px;
+  right: 200px;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media screen and (max-width: 1200px) {
+  body main #hero #stats {
+    left: 100px;
+    right: 100px;
+  }
+}
+@media screen and (max-width: 900px) {
+  body main #hero #stats {
+    left: 50px;
+    right: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main #hero #stats {
+    left: 10px;
+    right: 10px;
+  }
+}
+body main #hero #stats h3 {
+  text-align: center;
+  color: #F9F2D7;
+  grid-column: 1/4;
+  padding-bottom: 50px;
+}
+body main #hero #stats #sommerhuset-stats {
+  grid-column: 1/2;
+}
+body main #hero #stats #husets-regler-stats {
+  grid-column: 2/3;
+}
+body main #hero #stats #inkluderet-stats {
+  grid-column: 3/4;
+}
+body main #hero #stats .stats-kategorier {
+  color: #F9F2D7;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+body main #hero #stats .stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body footer {
+  grid-row: 2/3;
+  background-color: orange;
+}/*# sourceMappingURL=style.css.map */
