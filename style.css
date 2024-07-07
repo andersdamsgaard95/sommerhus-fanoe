@@ -5,6 +5,7 @@ Kald på mixin: @include partial.mixin-navn;
 */
 @import url("https://fonts.cdnfonts.com/css/niagara-engraved");
 @import url("https://fonts.cdnfonts.com/css/caladea");
+@import url("https://fonts.cdnfonts.com/css/zapfino");
 * {
   margin: 0;
   box-sizing: border-box;
@@ -17,35 +18,25 @@ html {
 
 p {
   font-size: 1rem;
+  color: #364626;
 }
 
 h1 {
   font-size: 2rem;
+  color: #364626;
   word-break: break-word;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  color: #364626;
   word-break: break-word;
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
+  color: #364626;
   word-break: break-word;
-}
-
-.cta {
-  background-color: black;
-  color: white;
-  padding: 10px 30px 10px 30px;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
-  text-decoration: none;
-  white-space: nowrap;
-  border-radius: 10px;
-}
-.cta:hover {
-  background-color: grey;
 }
 
 .ygrid {
@@ -109,7 +100,6 @@ body header #global-nav #logo h1 {
   font-family: "Niagara Engraved", sans-serif;
   font-weight: normal;
   font-size: 2.5rem;
-  color: #364626;
 }
 body header #global-nav #logo img {
   height: 4rem;
@@ -127,10 +117,9 @@ body header #global-nav #header-nav {
   }
 }
 body header #global-nav #header-nav a {
-  font-family: "Niagara Engraved", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-decoration: none;
-  color: #364626;
+  color: white;
   transition: all 0.3s;
 }
 body header #global-nav #header-nav a:hover {
@@ -169,14 +158,78 @@ body header #global-nav #burger-nav {
 body header #global-nav #burger-nav a {
   text-decoration: none;
   color: #F9F2D7;
-  font-family: "Niagara Engraved", sans-serif;
   font-size: 1.5rem;
 }
 body main {
   grid-row: 1/2;
+  /*#om-huset {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 50px;
+      @include partial.responsive-padding;
+      padding-top: 50px;
+
+          #fakta1 {
+              //font-family: 'Zapfino', sans-serif;
+              grid-column: 1/2;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+          }
+          #fakta2 {
+              //font-family: 'Zapfino', sans-serif;
+              grid-column: 2/3;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+          }
+          #fakta3 {
+              grid-column: 3/4;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+          }
+          .fakta-punkt {
+              display: flex;
+              flex-direction: row;
+              gap: 25px;
+
+                  img {
+                      height: 2rem;
+                  }
+                  p {
+                      align-self: end;
+                      font-size: 1rem;
+                  }
+          }
+          #om-tekst {
+              grid-column: 1/3;
+              display: flex;
+              flex-direction: column;
+              gap: 25px;
+
+
+                  p {
+                      display: flex;
+                      flex-direction: column;
+                      gap: 20px;
+                      text-align: start;
+                      max-width: 1000px;
+
+                          div {
+                              max-width: 400px;
+                          }
+                  }
+          }
+  }*/
 }
 body main #hero {
-  height: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+body main #hero #hero-img-container {
+  height: 700px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -184,44 +237,106 @@ body main #hero {
   position: relative;
 }
 @media screen and (max-width: 750px) {
-  body main #hero {
+  body main #hero #hero-img-container {
     height: 400px;
   }
 }
-body main #hero img {
+body main #hero #hero-img-container img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-body main #hero #hero-text {
+body main #hero #hero-img-container #hero-cta {
   position: absolute;
   bottom: 50px;
-  right: 0;
+  left: 0;
   padding-left: 100px;
   padding-right: 100px;
-  max-width: 700px;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
 }
 @media screen and (max-width: 900px) {
-  body main #hero #hero-text {
+  body main #hero #hero-img-container #hero-cta {
     padding-left: 50px;
     padding-right: 50px;
   }
 }
 @media screen and (max-width: 700px) {
-  body main #hero #hero-text {
+  body main #hero #hero-img-container #hero-cta {
     padding-left: 10px;
     padding-right: 10px;
   }
 }
-body main #hero #hero-text h2 {
-  text-align: end;
+body main #hero #hero-img-container #hero-cta a {
+  background-color: #F9F2D7;
+  color: #364626;
+  padding: 10px 30px 10px 30px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 10px;
 }
-body main #hero #hero-text a {
-  align-self: end;
+body main #hero h2 {
+  padding-left: 100px;
+  padding-right: 100px;
+  max-width: 900px;
+}
+@media screen and (max-width: 900px) {
+  body main #hero h2 {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main #hero h2 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+body main #fakta-blomst-section {
+  position: relative;
+}
+body main #fakta-blomst-section #fakta-box1-container {
+  margin: 50px 10px 50px 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  max-width: 75%;
+}
+body main #fakta-blomst-section #fakta-box1-container #fakta-box1 {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: space-between;
+  padding-left: 100px;
+  padding-right: 100px;
+  /*p:nth-of-type(1) {
+      grid-column: 1/2;
+  }
+  p:nth-of-type(2) {
+      grid-column: 2/3;
+  }
+  p:nth-of-type(3) {
+      grid-column: 3/4;
+  }*/
+}
+@media screen and (max-width: 900px) {
+  body main #fakta-blomst-section #fakta-box1-container #fakta-box1 {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main #fakta-blomst-section #fakta-box1-container #fakta-box1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+body main #fakta-blomst-section #blomst-img {
+  position: absolute;
+  right: 50px;
+  top: -120px;
 }
 body footer {
   grid-row: 2/3;

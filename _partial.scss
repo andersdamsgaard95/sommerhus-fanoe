@@ -22,11 +22,20 @@ $padding-gap: 50px;
 //Farver_______________________________________________
 $forside-baggrund: #F9F2D7;
 $omgivelser-baggrund: #D2DDC6;
-$primær-grøn: #364626;
-$gul: #FFE24E;
+$tekst-farve: #364626;
 
 
 //MIXINS
+
+@mixin cta ($background-color: #F9F2D7, $color: #364626) {
+    background-color: $background-color;
+    color: $color;
+    padding: 10px 30px 10px 30px;
+    max-width: fit-content;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 10px;
+}
 
 //Padding______________________________________________
 //Resonsiv padding
