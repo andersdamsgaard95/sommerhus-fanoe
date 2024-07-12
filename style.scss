@@ -217,88 +217,6 @@ body {
                         
                 }
 
-                /*#fakta-blomst-section {
-                    position: relative;
-
-                    #fakta-box1-container {
-                        margin: 50px 20px 50px 20px;
-                        padding-top: 50px;
-                        padding-bottom: 50px;
-                        border-top: 1px solid black;
-                        border-bottom: 1px solid black;
-                        max-width: 75%;
-                        @include partial.flex-column;
-
-                        @media screen and (max-width: 700px) {
-                            max-width: 50%;
-                            margin: 50px 10px 50px 10px;
-                        }
-    
-                            #fakta-box1 {
-                                display: flex;
-                                flex-direction: row;
-                                gap: 50px;
-                                justify-content: space-between;
-                                @include partial.responsive-padding;
-
-                                @media screen and (max-width: 700px) {
-                                    flex-direction: column;
-                                    gap: 50px;
-                                }
-                            }
-                            a {
-                                @include partial.responsive-padding;
-                                color: partial.$tekst-farve;
-                            }
-                    }
-                    #blomst-img {
-                        position: absolute;
-                        right: 20px;
-                        top: -120px;
-                        width: 20%;
-                        max-width: 200px;
-
-                        @media screen and (max-width: 700px) {
-                            top: 30px;
-                            right: 10px;
-                            width: 30%;
-                        }
-                    }
-                }
-
-                #om-huset {
-                    @include partial.responsive-padding;
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 50px;
-                    max-width: 83%;
-
-                    @media screen and (max-width:830px) {
-                        max-width: 100%;
-                    }
-                    @media screen and (max-width:700px) {
-                        max-width: 100%;
-                        grid-template-columns: 1fr;
-                    }
-
-                        div:nth-of-type(1) {
-                            grid-column: 1/2;
-                            display: flex;
-                            flex-direction: column;
-                            gap: 20px;
-                        }
-                        div:nth-of-type(2) {
-                            grid-column: 2/3;
-                            display: flex;
-                            flex-direction: column;
-                            gap: 20px;
-
-                            @media screen and (max-width:700px) {
-                                grid-column: 1/2;
-                            }
-                        }
-                }*/
-
                 #om-section-container {
                     margin-top: 50px;
                     display: grid;
@@ -309,10 +227,9 @@ body {
                     @media screen and (max-width: 700px) {
                         grid-template-columns: 2fr 1fr;
                     }
-                    @media screen and (max-width: 400px) {
+                    @media screen and (max-width: 500px) {
                         display: flex;
                         flex-direction: column;
-                        gap: 0px;
                     }
 
                         #fakta-box1-container {
@@ -328,9 +245,6 @@ body {
                             @media screen and (max-width: 700px) {
                                 grid-column: 1/2;
                             }
-                            @media screen and (max-width: 400px) {
-                                margin-bottom: 50px;
-                            }
 
                                 #fakta-box1 {
                                     display: flex;
@@ -338,7 +252,7 @@ body {
                                     gap: 50px;
                                     justify-content: space-between;
                                     @include partial.responsive-padding-left;
-                                    padding-right: 20px;
+                                    padding-right: 50px;
 
                                     @media screen and (max-width: 700px) {
                                         flex-direction: column;
@@ -363,13 +277,8 @@ body {
                             @media screen and (max-width: 700px) {
                                 grid-column: 2/3;
                             }
-                            @media screen and (max-width: 450px) {
-                                grid-row: 1/2;
+                            @media screen and (max-width: 500px) {
                                 align-self: center;
-                            }
-                            @media screen and (max-width: 400px) {
-                                grid-column: 1/3;
-                                margin-bottom: 50px;
                             }
                         }
 
@@ -377,10 +286,6 @@ body {
                             grid-row: 2/3;
                             grid-column: 1/3;
                             @include partial.responsive-padding;
-
-                            @media screen and (max-width: 400px) {
-                                margin-bottom: 20px;
-                            }
                         }
 
                         #om-huset-tekst {
@@ -427,14 +332,13 @@ body {
 
                 #fakta-container {
                     display: grid;
-                    grid-template-columns: 1fr 2fr;
+                    grid-template-columns: 1fr 4fr;
                     margin-top: 50px;
 
                         #sæl-img {
                             grid-column: 1/2;
                             width: 100%;
                             align-self: center;
-                            margin-top: 50px;
                         }
 
                         #fakta {
@@ -453,7 +357,8 @@ body {
                                 display: grid;
                                 grid-template-columns: 1fr 1fr 1fr;
                                 gap: 50px;
-                                @include partial.responsive-padding;
+                                @include partial.responsive-padding-right;
+                                padding-left: 50px;
 
                                 #fakta1 {
                                     //font-family: 'Zapfino', sans-serif;
@@ -474,19 +379,6 @@ body {
                                     display: flex;
                                     flex-direction: column;
                                     gap: 20px;
-                                }
-                                .fakta-punkt {
-                                    display: flex;
-                                    flex-direction: row;
-                                    gap: 25px;
-        
-                                        img {
-                                            height: 2rem;
-                                        }
-                                        p {
-                                            align-self: end;
-                                            font-size: 1rem;
-                                        }
                                 }
                             }
                         }
