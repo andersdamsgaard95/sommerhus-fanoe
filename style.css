@@ -55,23 +55,18 @@ h3 {
 
 body {
   display: grid;
-  grid-template-rows: 1fr 100px;
+  grid-template-rows: 75px 1fr 100px;
   min-height: 100vh;
   background-color: #F9F2D7;
 }
 body header {
-  background-color: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  padding-top: 20px;
+  background-color: #F9F2D7;
+  grid-row: 1/2;
 }
 body header #global-nav {
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: end;
+  align-items: center;
   padding-left: 100px;
   padding-right: 100px;
 }
@@ -119,7 +114,7 @@ body header #global-nav #header-nav {
 body header #global-nav #header-nav a {
   font-size: 1rem;
   text-decoration: none;
-  color: white;
+  color: #364626;
   transition: all 0.3s;
 }
 body header #global-nav #header-nav a:hover {
@@ -161,65 +156,86 @@ body header #global-nav #burger-nav a {
   font-size: 1.5rem;
 }
 body main {
-  grid-row: 1/2;
-  /*#om-huset {
-      display: grid;
-      grid-template-rows: 1fr 1fr 1fr;
-      gap: 50px;
-      @include partial.responsive-padding;
-      padding-top: 50px;
+  grid-row: 2/3;
+  /*#fakta-blomst-section {
+      position: relative;
 
-          #fakta1 {
-              //font-family: 'Zapfino', sans-serif;
+      #fakta-box1-container {
+          margin: 50px 20px 50px 20px;
+          padding-top: 50px;
+          padding-bottom: 50px;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black;
+          max-width: 75%;
+          @include partial.flex-column;
+
+          @media screen and (max-width: 700px) {
+              max-width: 50%;
+              margin: 50px 10px 50px 10px;
+          }
+
+              #fakta-box1 {
+                  display: flex;
+                  flex-direction: row;
+                  gap: 50px;
+                  justify-content: space-between;
+                  @include partial.responsive-padding;
+
+                  @media screen and (max-width: 700px) {
+                      flex-direction: column;
+                      gap: 50px;
+                  }
+              }
+              a {
+                  @include partial.responsive-padding;
+                  color: partial.$tekst-farve;
+              }
+      }
+      #blomst-img {
+          position: absolute;
+          right: 20px;
+          top: -120px;
+          width: 20%;
+          max-width: 200px;
+
+          @media screen and (max-width: 700px) {
+              top: 30px;
+              right: 10px;
+              width: 30%;
+          }
+      }
+  }
+
+  #om-huset {
+      @include partial.responsive-padding;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      max-width: 83%;
+
+      @media screen and (max-width:830px) {
+          max-width: 100%;
+      }
+      @media screen and (max-width:700px) {
+          max-width: 100%;
+          grid-template-columns: 1fr;
+      }
+
+          div:nth-of-type(1) {
               grid-column: 1/2;
               display: flex;
               flex-direction: column;
               gap: 20px;
           }
-          #fakta2 {
-              //font-family: 'Zapfino', sans-serif;
+          div:nth-of-type(2) {
               grid-column: 2/3;
               display: flex;
               flex-direction: column;
               gap: 20px;
-          }
-          #fakta3 {
-              grid-column: 3/4;
-              display: flex;
-              flex-direction: column;
-              gap: 20px;
-          }
-          .fakta-punkt {
-              display: flex;
-              flex-direction: row;
-              gap: 25px;
 
-                  img {
-                      height: 2rem;
-                  }
-                  p {
-                      align-self: end;
-                      font-size: 1rem;
-                  }
-          }
-          #om-tekst {
-              grid-column: 1/3;
-              display: flex;
-              flex-direction: column;
-              gap: 25px;
-
-
-                  p {
-                      display: flex;
-                      flex-direction: column;
-                      gap: 20px;
-                      text-align: start;
-                      max-width: 1000px;
-
-                          div {
-                              max-width: 400px;
-                          }
-                  }
+              @media screen and (max-width:700px) {
+                  grid-column: 1/2;
+              }
           }
   }*/
 }
@@ -230,7 +246,8 @@ body main #hero {
 }
 body main #hero #hero-img-container {
   height: 700px;
-  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -239,6 +256,12 @@ body main #hero #hero-img-container {
 @media screen and (max-width: 750px) {
   body main #hero #hero-img-container {
     height: 400px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main #hero #hero-img-container {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 body main #hero #hero-img-container img {
@@ -293,52 +316,280 @@ body main #hero h2 {
     padding-right: 10px;
   }
 }
-body main #fakta-blomst-section {
-  position: relative;
+@media screen and (max-width: 1000px) {
+  body main #hero h2 {
+    max-width: 800px;
+  }
 }
-body main #fakta-blomst-section #fakta-box1-container {
-  margin: 50px 10px 50px 10px;
+@media screen and (max-width: 900px) {
+  body main #hero h2 {
+    max-width: 700px;
+  }
+}
+@media screen and (max-width: 800px) {
+  body main #hero h2 {
+    max-width: 600px;
+  }
+}
+body main #om-section-container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 2fr 2fr 1fr;
+  row-gap: 50px;
+}
+@media screen and (max-width: 700px) {
+  body main #om-section-container {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+@media screen and (max-width: 400px) {
+  body main #om-section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+}
+body main #om-section-container #fakta-box1-container {
+  grid-row: 1/2;
+  grid-column: 1/3;
+  margin: 0px 20px 0px 20px;
   padding-top: 50px;
   padding-bottom: 50px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  max-width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
-body main #fakta-blomst-section #fakta-box1-container #fakta-box1 {
+@media screen and (max-width: 700px) {
+  body main #om-section-container #fakta-box1-container {
+    grid-column: 1/2;
+  }
+}
+@media screen and (max-width: 400px) {
+  body main #om-section-container #fakta-box1-container {
+    margin-bottom: 50px;
+  }
+}
+body main #om-section-container #fakta-box1-container #fakta-box1 {
   display: flex;
   flex-direction: row;
   gap: 50px;
   justify-content: space-between;
   padding-left: 100px;
-  padding-right: 100px;
-  /*p:nth-of-type(1) {
-      grid-column: 1/2;
-  }
-  p:nth-of-type(2) {
-      grid-column: 2/3;
-  }
-  p:nth-of-type(3) {
-      grid-column: 3/4;
-  }*/
+  padding-right: 20px;
 }
 @media screen and (max-width: 900px) {
-  body main #fakta-blomst-section #fakta-box1-container #fakta-box1 {
+  body main #om-section-container #fakta-box1-container #fakta-box1 {
+    padding-left: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main #om-section-container #fakta-box1-container #fakta-box1 {
+    padding-left: 10px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main #om-section-container #fakta-box1-container #fakta-box1 {
+    flex-direction: column;
+  }
+}
+body main #om-section-container #fakta-box1-container a {
+  padding-left: 100px;
+  color: #364626;
+  padding-right: 20px;
+}
+@media screen and (max-width: 900px) {
+  body main #om-section-container #fakta-box1-container a {
+    padding-left: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main #om-section-container #fakta-box1-container a {
+    padding-left: 10px;
+  }
+}
+body main #om-section-container img {
+  grid-row: 1/4;
+  grid-column: 3/4;
+  width: 100%;
+  max-width: 200px;
+  justify-self: center;
+  padding-right: 20px;
+}
+@media screen and (max-width: 700px) {
+  body main #om-section-container img {
+    grid-column: 2/3;
+  }
+}
+@media screen and (max-width: 450px) {
+  body main #om-section-container img {
+    grid-row: 1/2;
+    align-self: center;
+  }
+}
+@media screen and (max-width: 400px) {
+  body main #om-section-container img {
+    grid-column: 1/3;
+    margin-bottom: 50px;
+  }
+}
+body main #om-section-container #om-overskrift {
+  grid-row: 2/3;
+  grid-column: 1/3;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+@media screen and (max-width: 900px) {
+  body main #om-section-container #om-overskrift {
     padding-left: 50px;
     padding-right: 50px;
   }
 }
 @media screen and (max-width: 700px) {
-  body main #fakta-blomst-section #fakta-box1-container #fakta-box1 {
+  body main #om-section-container #om-overskrift {
     padding-left: 10px;
     padding-right: 10px;
   }
 }
-body main #fakta-blomst-section #blomst-img {
-  position: absolute;
-  right: 50px;
-  top: -120px;
+@media screen and (max-width: 400px) {
+  body main #om-section-container #om-overskrift {
+    margin-bottom: 20px;
+  }
+}
+body main #om-section-container #om-huset-tekst {
+  grid-row: 3/4;
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  padding-left: 100px;
+  padding-right: 20px;
+  justify-content: space-between;
+}
+@media screen and (max-width: 900px) {
+  body main #om-section-container #om-huset-tekst {
+    padding-left: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main #om-section-container #om-huset-tekst {
+    padding-left: 10px;
+  }
+}
+@media screen and (max-width: 750px) {
+  body main #om-section-container #om-huset-tekst {
+    grid-column: 1/4;
+    padding-right: 100px;
+  }
+}
+@media screen and (max-width: 750px) and (max-width: 900px) {
+  body main #om-section-container #om-huset-tekst {
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 750px) and (max-width: 700px) {
+  body main #om-section-container #om-huset-tekst {
+    padding-right: 10px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main #om-section-container #om-huset-tekst {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+body main #om-section-container #om-huset-tekst #om-huset-tekst-column1 {
+  flex: 1;
+}
+body main #om-section-container #om-huset-tekst #om-huset-tekst-column1 div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body main #om-section-container #om-huset-tekst #om-huset-tekst-column2 {
+  flex: 1;
+}
+body main #om-section-container #om-huset-tekst #om-huset-tekst-column2 div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body main #fakta-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-top: 50px;
+}
+body main #fakta-container #sæl-img {
+  grid-column: 1/2;
+  width: 100%;
+  align-self: center;
+  margin-top: 50px;
+}
+body main #fakta-container #fakta {
+  grid-column: 2/3;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-right: 20px;
+}
+@media screen and (max-width: 700px) {
+  body main #fakta-container #fakta {
+    margin-right: 10px;
+  }
+}
+body main #fakta-container #fakta #fakta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+@media screen and (max-width: 900px) {
+  body main #fakta-container #fakta #fakta-grid {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main #fakta-container #fakta #fakta-grid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+body main #fakta-container #fakta #fakta-grid #fakta1 {
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body main #fakta-container #fakta #fakta-grid #fakta2 {
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body main #fakta-container #fakta #fakta-grid #fakta3 {
+  grid-column: 3/4;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body main #fakta-container #fakta #fakta-grid .fakta-punkt {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+body main #fakta-container #fakta #fakta-grid .fakta-punkt img {
+  height: 2rem;
+}
+body main #fakta-container #fakta #fakta-grid .fakta-punkt p {
+  align-self: end;
+  font-size: 1rem;
 }
 body footer {
-  grid-row: 2/3;
-  background-color: orange;
+  grid-row: 3/4;
+  background-color: black;
 }/*# sourceMappingURL=style.css.map */
