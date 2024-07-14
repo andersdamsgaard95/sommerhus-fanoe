@@ -57,10 +57,10 @@ body {
   display: grid;
   grid-template-rows: 75px 1fr 100px;
   min-height: 100vh;
-  background-color: #F9F2D7;
+  background-color: #FEFBF3;
 }
 body header {
-  background-color: #F9F2D7;
+  background-color: #FEFBF3;
   grid-row: 1/2;
 }
 body header #global-nav {
@@ -152,7 +152,7 @@ body header #global-nav #burger-nav {
 }
 body header #global-nav #burger-nav a {
   text-decoration: none;
-  color: #F9F2D7;
+  color: #FEFBF3;
   font-size: 1.5rem;
 }
 body main {
@@ -255,14 +255,13 @@ body main #om-section-container {
   display: grid;
   grid-template-rows: auto auto auto;
   grid-template-columns: 2fr 2fr 1fr;
-  row-gap: 50px;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   body main #om-section-container {
     grid-template-columns: 2fr 1fr;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
   body main #om-section-container {
     display: flex;
     flex-direction: column;
@@ -280,9 +279,10 @@ body main #om-section-container #fakta-box1-container {
   flex-direction: column;
   gap: 50px;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   body main #om-section-container #fakta-box1-container {
     grid-column: 1/2;
+    margin: 0 10px 0 10px;
   }
 }
 body main #om-section-container #fakta-box1-container #fakta-box1 {
@@ -303,7 +303,7 @@ body main #om-section-container #fakta-box1-container #fakta-box1 {
     padding-left: 10px;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 500px) {
   body main #om-section-container #fakta-box1-container #fakta-box1 {
     flex-direction: column;
   }
@@ -328,24 +328,33 @@ body main #om-section-container img {
   grid-column: 3/4;
   width: 100%;
   max-width: 200px;
-  justify-self: center;
+  align-self: end;
+  justify-self: end;
   padding-right: 20px;
+  z-index: 1;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   body main #om-section-container img {
     grid-column: 2/3;
+    align-self: start;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
   body main #om-section-container img {
     align-self: center;
+    margin-top: 50px;
   }
 }
 body main #om-section-container #om-overskrift {
   grid-row: 2/3;
   grid-column: 1/3;
+  margin-top: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-left: 20px;
   padding-left: 100px;
   padding-right: 100px;
+  background-color: #F9F2D7;
 }
 @media screen and (max-width: 900px) {
   body main #om-section-container #om-overskrift {
@@ -357,6 +366,11 @@ body main #om-section-container #om-overskrift {
   body main #om-section-container #om-overskrift {
     padding-left: 10px;
     padding-right: 10px;
+  }
+}
+@media screen and (max-width: 900px) {
+  body main #om-section-container #om-overskrift {
+    margin-right: 20px;
   }
 }
 body main #om-section-container #om-huset-tekst {
@@ -366,8 +380,11 @@ body main #om-section-container #om-huset-tekst {
   flex-direction: row;
   gap: 50px;
   padding-left: 100px;
-  padding-right: 20px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  margin-left: 20px;
   justify-content: space-between;
+  background-color: #F9F2D7;
 }
 @media screen and (max-width: 900px) {
   body main #om-section-container #om-huset-tekst {
@@ -379,23 +396,23 @@ body main #om-section-container #om-huset-tekst {
     padding-left: 10px;
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 900px) {
   body main #om-section-container #om-huset-tekst {
-    grid-column: 1/4;
+    margin-right: 20px;
     padding-right: 100px;
   }
 }
-@media screen and (max-width: 750px) and (max-width: 900px) {
+@media screen and (max-width: 900px) and (max-width: 900px) {
   body main #om-section-container #om-huset-tekst {
     padding-right: 50px;
   }
 }
-@media screen and (max-width: 750px) and (max-width: 700px) {
+@media screen and (max-width: 900px) and (max-width: 700px) {
   body main #om-section-container #om-huset-tekst {
     padding-right: 10px;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   body main #om-section-container #om-huset-tekst {
     flex-direction: column;
     gap: 20px;
@@ -420,24 +437,54 @@ body main #om-section-container #om-huset-tekst #om-huset-tekst-column2 div {
 body main #fakta-container {
   display: grid;
   grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto auto;
+  row-gap: 50px;
   margin-top: 50px;
+}
+@media screen and (max-width: 900px) {
+  body main #fakta-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 50px;
+  }
 }
 body main #fakta-container #sæl-img {
   grid-column: 1/2;
+  grid-row: 1/2;
   width: 100%;
-  align-self: center;
+  max-width: 250px;
+  align-self: end;
+  justify-self: start;
+  padding-left: 20px;
+}
+@media screen and (max-width: 900px) {
+  body main #fakta-container #sæl-img {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding-right: 20px;
+    justify-self: center;
+  }
 }
 body main #fakta-container #fakta {
   grid-column: 2/3;
+  grid-row: 1/2;
   border-top: solid 1px black;
   border-bottom: solid 1px black;
   padding-top: 50px;
   padding-bottom: 50px;
   margin-right: 20px;
 }
+@media screen and (max-width: 900px) {
+  body main #fakta-container #fakta {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    margin-left: 20px;
+  }
+}
 @media screen and (max-width: 700px) {
   body main #fakta-container #fakta {
     margin-right: 10px;
+    margin-left: 10px;
   }
 }
 body main #fakta-container #fakta #fakta-grid {
@@ -457,11 +504,40 @@ body main #fakta-container #fakta #fakta-grid {
     padding-right: 10px;
   }
 }
+@media screen and (max-width: 900px) {
+  body main #fakta-container #fakta #fakta-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    padding-left: 100px;
+  }
+}
+@media screen and (max-width: 900px) and (max-width: 900px) {
+  body main #fakta-container #fakta #fakta-grid {
+    padding-left: 50px;
+  }
+}
+@media screen and (max-width: 900px) and (max-width: 700px) {
+  body main #fakta-container #fakta #fakta-grid {
+    padding-left: 10px;
+  }
+}
+@media screen and (max-width: 500px) {
+  body main #fakta-container #fakta #fakta-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+}
 body main #fakta-container #fakta #fakta-grid #fakta1 {
   grid-column: 1/2;
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+@media screen and (max-width: 900px) {
+  body main #fakta-container #fakta #fakta-grid #fakta1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
 }
 body main #fakta-container #fakta #fakta-grid #fakta2 {
   grid-column: 2/3;
@@ -469,11 +545,63 @@ body main #fakta-container #fakta #fakta-grid #fakta2 {
   flex-direction: column;
   gap: 20px;
 }
+@media screen and (max-width: 900px) {
+  body main #fakta-container #fakta #fakta-grid #fakta2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+}
+@media screen and (max-width: 500px) {
+  body main #fakta-container #fakta #fakta-grid #fakta2 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
 body main #fakta-container #fakta #fakta-grid #fakta3 {
   grid-column: 3/4;
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+@media screen and (max-width: 900px) {
+  body main #fakta-container #fakta #fakta-grid #fakta3 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
+@media screen and (max-width: 500px) {
+  body main #fakta-container #fakta #fakta-grid #fakta3 {
+    grid-row: 3/4;
+  }
+}
+body main #fakta-container .cta {
+  background-color: #364626;
+  color: #FEFBF3;
+  padding: 10px 30px 10px 30px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 10px;
+  grid-column: 1/3;
+  grid-row: 2/3;
+  justify-self: center;
+}
+@media screen and (max-width: 900px) {
+  body main #fakta-container .cta {
+    grid-row: 3/4;
+  }
+}
+body main #solnedgang-section {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+body main #solnedgang-section #solnedgang-img-container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+body main #solnedgang-section #solnedgang-img-container img {
+  width: 100%;
 }
 body footer {
   grid-row: 3/4;

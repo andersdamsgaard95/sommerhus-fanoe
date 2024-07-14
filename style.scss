@@ -222,12 +222,12 @@ body {
                     display: grid;
                     grid-template-rows: auto auto auto;
                     grid-template-columns: 2fr 2fr 1fr;
-                    row-gap: 50px;
+                    //row-gap: 50px;
 
-                    @media screen and (max-width: 700px) {
+                    @media screen and (max-width: 750px) {
                         grid-template-columns: 2fr 1fr;
                     }
-                    @media screen and (max-width: 500px) {
+                    @media screen and (max-width: 900px) {
                         display: flex;
                         flex-direction: column;
                     }
@@ -242,8 +242,9 @@ body {
                             border-bottom: 1px solid black;
                             @include partial.flex-column;
 
-                            @media screen and (max-width: 700px) {
+                            @media screen and (max-width: 750px) {
                                 grid-column: 1/2;
+                                margin: 0 10px 0 10px;
                             }
 
                                 #fakta-box1 {
@@ -254,7 +255,7 @@ body {
                                     @include partial.responsive-padding-left;
                                     padding-right: 50px;
 
-                                    @media screen and (max-width: 700px) {
+                                    @media screen and (max-width: 500px) {
                                         flex-direction: column;
                                     }
                                 }
@@ -270,22 +271,34 @@ body {
                             grid-column: 3/4;
                             width: 100%;
                             max-width: 200px;
-                            //align-self: center;
-                            justify-self: center;
+                            align-self: end;
+                            justify-self: end;
                             padding-right: 20px;
+                            z-index: 1;
 
-                            @media screen and (max-width: 700px) {
+                            @media screen and (max-width: 750px) {
                                 grid-column: 2/3;
+                                align-self: start;
                             }
-                            @media screen and (max-width: 500px) {
+                            @media screen and (max-width: 900px) {
                                 align-self: center;
+                                margin-top: 50px;
                             }
                         }
 
                         #om-overskrift {
                             grid-row: 2/3;
                             grid-column: 1/3;
+                            margin-top: 50px;
+                            padding-top: 50px;
+                            padding-bottom: 50px;
+                            margin-left: 20px;
                             @include partial.responsive-padding;
+                            background-color: partial.$detalje-farve;
+
+                            @media screen and (max-width: 900px) {
+                                margin-right: 20px;
+                            }
                         }
 
                         #om-huset-tekst {
@@ -295,14 +308,17 @@ body {
                             flex-direction: row;
                             gap: 50px;
                             @include partial.responsive-padding-left;
-                            padding-right: 20px;
+                            padding-right: 50px;
+                            padding-bottom: 50px;
+                            margin-left: 20px;
                             justify-content: space-between;
+                            background-color: partial.$detalje-farve;
 
-                            @media screen and (max-width: 750px) {
-                                grid-column: 1/4;
+                            @media screen and (max-width: 900px) {
+                                margin-right: 20px;
                                 @include partial.responsive-padding-right
                             }
-                            @media screen and (max-width: 700px) {
+                            @media screen and (max-width: 750px) {
                                 flex-direction: column;
                                 gap: 20px;
                             }
@@ -333,24 +349,50 @@ body {
                 #fakta-container {
                     display: grid;
                     grid-template-columns: 1fr 4fr;
+                    grid-template-rows: auto auto;
+                    row-gap: 50px;
                     margin-top: 50px;
+
+                    @media screen and (max-width: 900px) {
+                        grid-template-columns: 1fr;
+                        grid-template-rows: auto auto auto;
+                        gap: 50px;
+                    }
 
                         #sæl-img {
                             grid-column: 1/2;
+                            grid-row: 1/2;
                             width: 100%;
-                            align-self: center;
+                            max-width: 250px;
+                            align-self: end;
+                            justify-self: start;
+                            padding-left: 20px;
+
+                            @media screen and (max-width: 900px) {
+                                grid-column: 1/2;
+                                grid-row: 1/2;
+                                padding-right: 20px;
+                                justify-self: center;
+                            }
                         }
 
                         #fakta {
                             grid-column: 2/3;
+                            grid-row: 1/2;
                             border-top: solid 1px black;
                             border-bottom: solid 1px black;
                             padding-top: 50px;
                             padding-bottom: 50px;
                             margin-right: 20px;
 
+                            @media screen and (max-width: 900px) {
+                                grid-column: 1/3;
+                                grid-row: 2/3;
+                                margin-left: 20px;
+                            }
                             @media screen and (max-width: 700px) {
                                 margin-right: 10px;
+                                margin-left: 10px;
                             }
 
                             #fakta-grid {
@@ -360,12 +402,27 @@ body {
                                 @include partial.responsive-padding-right;
                                 padding-left: 50px;
 
+                                @media screen and (max-width: 900px) {
+                                    grid-template-columns: 1fr 1fr;
+                                    grid-template-rows: auto auto;
+                                    @include partial.responsive-padding-left;
+                                }
+                                @media screen and (max-width: 500px) {
+                                    grid-template-columns: 1fr;
+                                    grid-template-rows: auto auto auto;
+                                }
+
                                 #fakta1 {
                                     //font-family: 'Zapfino', sans-serif;
                                     grid-column: 1/2;
                                     display: flex;
                                     flex-direction: column;
                                     gap: 20px;
+
+                                    @media screen and (max-width: 900px) {
+                                        grid-column: 1/2;
+                                        grid-row: 1/2;
+                                    }
                                 }
                                 #fakta2 {
                                     //font-family: 'Zapfino', sans-serif;
@@ -373,17 +430,62 @@ body {
                                     display: flex;
                                     flex-direction: column;
                                     gap: 20px;
+
+                                    @media screen and (max-width: 900px) {
+                                        grid-column: 2/3;
+                                        grid-row: 1/2;
+                                    }
+                                    @media screen and (max-width: 500px) {
+                                        grid-column: 1/2;
+                                        grid-row: 2/3;
+                                    }
                                 }
                                 #fakta3 {
                                     grid-column: 3/4;
                                     display: flex;
                                     flex-direction: column;
                                     gap: 20px;
+
+                                    @media screen and (max-width: 900px) {
+                                        grid-column: 1/2;
+                                        grid-row: 2/3;
+                                    }
+                                    @media screen and (max-width: 500px) {
+                                        grid-row: 3/4;
+                                    }
                                 }
                             }
                         }
+
+                        .cta {
+                            @include partial.cta($background-color: partial.$tekst-farve, $color: partial.$forside-baggrund);
+                            grid-column: 1/3;
+                            grid-row: 2/3;
+                            justify-self: center;
+                            
+                            @media screen and (max-width: 900px) {
+                                grid-row: 3/4;
+                            }
+                        }
+
                 }
-        }
+
+                #solnedgang-section {
+                    margin-top: 50px;
+                    margin-bottom: 50px;
+
+                        #solnedgang-img-container {
+                            margin-left: 20px;
+                            margin-right: 20px;
+
+                                img {
+                                    width: 100%;
+                                }
+                        }
+                }
+
+
+        } //Main slut
         
 
         footer {
