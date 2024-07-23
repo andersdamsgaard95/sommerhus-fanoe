@@ -250,331 +250,129 @@ body main #hero h2 {
     max-width: 600px;
   }
 }
-body main #om-section-container {
-  margin-top: 50px;
+body main #fakta-kontakt {
   display: grid;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: 2fr 2fr 1fr;
-}
-@media screen and (max-width: 750px) {
-  body main #om-section-container {
-    grid-template-columns: 2fr 1fr;
-  }
-}
-@media screen and (max-width: 900px) {
-  body main #om-section-container {
-    display: flex;
-    flex-direction: column;
-  }
-}
-body main #om-section-container #fakta-box1-container {
-  grid-row: 1/2;
-  grid-column: 1/3;
-  margin: 0px 20px 0px 20px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-@media screen and (max-width: 750px) {
-  body main #om-section-container #fakta-box1-container {
-    grid-column: 1/2;
-    margin: 0 10px 0 10px;
-  }
-}
-body main #om-section-container #fakta-box1-container #fakta-box1 {
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
-  justify-content: space-between;
-  padding-left: 100px;
-  padding-right: 50px;
-}
-@media screen and (max-width: 900px) {
-  body main #om-section-container #fakta-box1-container #fakta-box1 {
-    padding-left: 50px;
-  }
-}
-@media screen and (max-width: 700px) {
-  body main #om-section-container #fakta-box1-container #fakta-box1 {
-    padding-left: 10px;
-  }
-}
-@media screen and (max-width: 500px) {
-  body main #om-section-container #fakta-box1-container #fakta-box1 {
-    flex-direction: column;
-  }
-}
-body main #om-section-container #fakta-box1-container a {
-  padding-left: 100px;
-  color: #364626;
-  padding-right: 20px;
-}
-@media screen and (max-width: 900px) {
-  body main #om-section-container #fakta-box1-container a {
-    padding-left: 50px;
-  }
-}
-@media screen and (max-width: 700px) {
-  body main #om-section-container #fakta-box1-container a {
-    padding-left: 10px;
-  }
-}
-body main #om-section-container img {
-  grid-row: 1/4;
-  grid-column: 3/4;
-  width: 100%;
-  max-width: 200px;
-  align-self: end;
-  justify-self: end;
-  padding-right: 20px;
-  z-index: 1;
-}
-@media screen and (max-width: 750px) {
-  body main #om-section-container img {
-    grid-column: 2/3;
-    align-self: start;
-  }
-}
-@media screen and (max-width: 900px) {
-  body main #om-section-container img {
-    align-self: center;
-    margin-top: 50px;
-  }
-}
-body main #om-section-container #om-overskrift {
-  grid-row: 2/3;
-  grid-column: 1/3;
-  margin-top: 50px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin-left: 20px;
-  padding-left: 100px;
-  padding-right: 100px;
-  background-color: #F9F2D7;
-}
-@media screen and (max-width: 900px) {
-  body main #om-section-container #om-overskrift {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-}
-@media screen and (max-width: 700px) {
-  body main #om-section-container #om-overskrift {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-@media screen and (max-width: 900px) {
-  body main #om-section-container #om-overskrift {
-    margin-right: 20px;
-  }
-}
-body main #om-section-container #om-huset-tekst {
-  grid-row: 3/4;
-  grid-column: 1/3;
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
-  padding-left: 100px;
-  padding-right: 50px;
-  padding-bottom: 50px;
-  margin-left: 20px;
-  justify-content: space-between;
-  background-color: #F9F2D7;
-}
-@media screen and (max-width: 900px) {
-  body main #om-section-container #om-huset-tekst {
-    padding-left: 50px;
-  }
-}
-@media screen and (max-width: 700px) {
-  body main #om-section-container #om-huset-tekst {
-    padding-left: 10px;
-  }
-}
-@media screen and (max-width: 900px) {
-  body main #om-section-container #om-huset-tekst {
-    margin-right: 20px;
-    padding-right: 100px;
-  }
-}
-@media screen and (max-width: 900px) and (max-width: 900px) {
-  body main #om-section-container #om-huset-tekst {
-    padding-right: 50px;
-  }
-}
-@media screen and (max-width: 900px) and (max-width: 700px) {
-  body main #om-section-container #om-huset-tekst {
-    padding-right: 10px;
-  }
-}
-@media screen and (max-width: 750px) {
-  body main #om-section-container #om-huset-tekst {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-body main #om-section-container #om-huset-tekst #om-huset-tekst-column1 {
-  flex: 1;
-}
-body main #om-section-container #om-huset-tekst #om-huset-tekst-column1 div {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-body main #om-section-container #om-huset-tekst #om-huset-tekst-column2 {
-  flex: 1;
-}
-body main #om-section-container #om-huset-tekst #om-huset-tekst-column2 div {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-body main #fakta-container {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  row-gap: 50px;
-  margin-top: 50px;
+  gap: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 @media screen and (max-width: 900px) {
-  body main #fakta-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 50px;
+  body main #fakta-kontakt {
+    margin-left: 50px;
+    margin-right: 50px;
   }
 }
-body main #fakta-container #sæl-img {
-  grid-column: 1/2;
-  grid-row: 1/2;
-  width: 100%;
-  max-width: 250px;
-  align-self: end;
-  justify-self: start;
-  padding-left: 20px;
+@media screen and (max-width: 700px) {
+  body main #fakta-kontakt {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
-@media screen and (max-width: 900px) {
-  body main #fakta-container #sæl-img {
+@media screen and (max-width: 780px) {
+  body main #fakta-kontakt {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 0;
+  }
+}
+body main #fakta-kontakt #fakta-box-1-container {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+@media screen and (max-width: 780px) {
+  body main #fakta-kontakt #fakta-box-1-container {
     grid-column: 1/2;
     grid-row: 1/2;
-    padding-right: 20px;
-    justify-self: center;
   }
 }
-body main #fakta-container #fakta {
-  grid-column: 2/3;
-  grid-row: 1/2;
+body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 50px;
   border-top: solid 1px black;
   border-bottom: solid 1px black;
   padding-top: 50px;
   padding-bottom: 50px;
-  margin-right: 20px;
+  width: calc(100% - 400px - 100px);
 }
-@media screen and (max-width: 900px) {
-  body main #fakta-container #fakta {
-    grid-column: 1/3;
-    grid-row: 2/3;
-    margin-left: 20px;
+@media screen and (max-width: 780px) {
+  body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 {
+    width: 100%;
   }
 }
-@media screen and (max-width: 700px) {
-  body main #fakta-container #fakta {
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-}
-body main #fakta-container #fakta #fakta-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list {
+  display: flex;
+  flex-direction: row;
   gap: 50px;
-  padding-right: 100px;
-  padding-left: 50px;
+  justify-content: space-between;
+  padding: 0 25px 0 25px;
 }
-@media screen and (max-width: 900px) {
-  body main #fakta-container #fakta #fakta-grid {
-    padding-right: 50px;
+@media screen and (max-width: 1140px) {
+  body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list {
+    flex-direction: column;
   }
 }
-@media screen and (max-width: 700px) {
-  body main #fakta-container #fakta #fakta-grid {
-    padding-right: 10px;
-  }
-}
-@media screen and (max-width: 900px) {
-  body main #fakta-container #fakta #fakta-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    padding-left: 100px;
-  }
-}
-@media screen and (max-width: 900px) and (max-width: 900px) {
-  body main #fakta-container #fakta #fakta-grid {
-    padding-left: 50px;
-  }
-}
-@media screen and (max-width: 900px) and (max-width: 700px) {
-  body main #fakta-container #fakta #fakta-grid {
-    padding-left: 10px;
+@media screen and (max-width: 780px) {
+  body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list {
+    flex-direction: row;
   }
 }
 @media screen and (max-width: 500px) {
-  body main #fakta-container #fakta #fakta-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+  body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list {
+    flex-direction: column;
   }
 }
-body main #fakta-container #fakta #fakta-grid #fakta1 {
-  grid-column: 1/2;
+body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 a {
+  color: black;
+  padding: 0 25px 0 25px;
+}
+body main #fakta-kontakt #kontakt-info-container {
+  grid-column: 1/3;
+  grid-row: 1/3;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: center;
+  position: relative;
 }
-@media screen and (max-width: 900px) {
-  body main #fakta-container #fakta #fakta-grid #fakta1 {
-    grid-column: 1/2;
-    grid-row: 1/2;
-  }
-}
-body main #fakta-container #fakta #fakta-grid #fakta2 {
-  grid-column: 2/3;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-@media screen and (max-width: 900px) {
-  body main #fakta-container #fakta #fakta-grid #fakta2 {
+@media screen and (max-width: 1140px) {
+  body main #fakta-kontakt #kontakt-info-container {
     grid-column: 2/3;
     grid-row: 1/2;
   }
 }
-@media screen and (max-width: 500px) {
-  body main #fakta-container #fakta #fakta-grid #fakta2 {
+@media screen and (max-width: 780px) {
+  body main #fakta-kontakt #kontakt-info-container {
     grid-column: 1/2;
     grid-row: 2/3;
+    margin: 50px 0 50px 0;
   }
 }
-body main #fakta-container #fakta #fakta-grid #fakta3 {
-  grid-column: 3/4;
+body main #fakta-kontakt #kontakt-info-container #kontakt-info {
+  background-color: #F9F2D7;
+  width: 400px;
+  padding: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  right: 0;
+  top: 50px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
+  position: absolute;
 }
-@media screen and (max-width: 900px) {
-  body main #fakta-container #fakta #fakta-grid #fakta3 {
-    grid-column: 1/2;
-    grid-row: 2/3;
+@media screen and (max-width: 780px) {
+  body main #fakta-kontakt #kontakt-info-container #kontakt-info {
+    position: initial;
   }
 }
-@media screen and (max-width: 500px) {
-  body main #fakta-container #fakta #fakta-grid #fakta3 {
-    grid-row: 3/4;
+@media screen and (max-width: 420px) {
+  body main #fakta-kontakt #kontakt-info-container #kontakt-info {
+    width: 100%;
   }
 }
-body main #fakta-container .cta {
+body main #fakta-kontakt #kontakt-info-container #kontakt-info .cta {
   background-color: #364626;
   color: #FEFBF3;
   padding: 10px 30px 10px 30px;
@@ -583,14 +381,144 @@ body main #fakta-container .cta {
   text-decoration: none;
   white-space: nowrap;
   border-radius: 10px;
-  grid-column: 1/3;
-  grid-row: 2/3;
-  justify-self: center;
 }
-@media screen and (max-width: 900px) {
-  body main #fakta-container .cta {
+body main #fakta-kontakt #om-huset-tekst-column1 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+@media screen and (max-width: 780px) {
+  body main #fakta-kontakt #om-huset-tekst-column1 {
+    grid-column: 1/2;
     grid-row: 3/4;
   }
+}
+body main #fakta-kontakt #om-huset-tekst-column2 {
+  grid-column: 2/4;
+  grid-row: 2/3;
+  margin-top: 175px;
+}
+@media screen and (max-width: 1140px) {
+  body main #fakta-kontakt #om-huset-tekst-column2 {
+    grid-column: 2/3;
+    margin-top: 75px;
+  }
+}
+@media screen and (max-width: 780px) {
+  body main #fakta-kontakt #om-huset-tekst-column2 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    margin-top: 0;
+  }
+}
+body main #fakta-kontakt .om-brodtekst {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+body main #fakta2-container {
+  margin-top: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+@media screen and (max-width: 900px) {
+  body main #fakta2-container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main #fakta2-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+body main #fakta2-container #fakta {
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-right: 20px;
+}
+body main #fakta2-container #fakta #fakta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+}
+@media screen and (max-width: 900px) {
+  body main #fakta2-container #fakta #fakta-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  body main #fakta2-container #fakta #fakta-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+}
+body main #fakta2-container #fakta #fakta-grid #fakta1 {
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media screen and (max-width: 900px) {
+  body main #fakta2-container #fakta #fakta-grid #fakta1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+}
+body main #fakta2-container #fakta #fakta-grid #fakta2 {
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media screen and (max-width: 900px) {
+  body main #fakta2-container #fakta #fakta-grid #fakta2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+}
+@media screen and (max-width: 500px) {
+  body main #fakta2-container #fakta #fakta-grid #fakta2 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
+body main #fakta2-container #fakta #fakta-grid #fakta3 {
+  grid-column: 3/4;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media screen and (max-width: 900px) {
+  body main #fakta2-container #fakta #fakta-grid #fakta3 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
+@media screen and (max-width: 500px) {
+  body main #fakta2-container #fakta #fakta-grid #fakta3 {
+    grid-row: 3/4;
+  }
+}
+body main #fakta2-container .cta {
+  background-color: #364626;
+  color: #FEFBF3;
+  padding: 10px 30px 10px 30px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 10px;
+  align-self: center;
 }
 body main #solnedgang-section {
   margin-top: 50px;

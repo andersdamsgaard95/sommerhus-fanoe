@@ -217,195 +217,166 @@ body {
                         
                 }
 
-                #om-section-container {
-                    margin-top: 50px;
+                #fakta-kontakt {
                     display: grid;
-                    grid-template-rows: auto auto auto;
-                    grid-template-columns: 2fr 2fr 1fr;
-                    //row-gap: 50px;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: auto auto;
+                    gap: 50px;
+                    @include partial.responsive-margin;
 
-                    @media screen and (max-width: 750px) {
-                        grid-template-columns: 2fr 1fr;
-                    }
-                    @media screen and (max-width: 900px) {
-                        display: flex;
-                        flex-direction: column;
+                    @media screen and (max-width: 780px) {
+                        grid-template-columns: 1fr;
+                        grid-template-rows: auto auto auto auto;
+                        gap: 0;
                     }
 
-                        #fakta-box1-container {
+                        #fakta-box-1-container {
+                            grid-column: 1/3;
                             grid-row: 1/2;
-                            grid-column: 1/3;
-                            margin: 0px 20px 0px 20px;
-                            padding-top: 50px;
-                            padding-bottom: 50px;
-                            border-top: 1px solid black;
-                            border-bottom: 1px solid black;
-                            @include partial.flex-column;
 
-                            @media screen and (max-width: 750px) {
+                            @media screen and (max-width: 780px) {
                                 grid-column: 1/2;
-                                margin: 0 10px 0 10px;
+                                grid-row: 1/2;
                             }
 
-                                #fakta-box1 {
-                                    display: flex;
-                                    flex-direction: row;
-                                    gap: 50px;
-                                    justify-content: space-between;
-                                    @include partial.responsive-padding-left;
-                                    padding-right: 50px;
-
-                                    @media screen and (max-width: 500px) {
-                                        flex-direction: column;
-                                    }
-                                }
-                                a {
-                                    @include partial.responsive-padding-left;
-                                    color: partial.$tekst-farve;
-                                    padding-right: 20px;
-                                }
-                        }
-
-                        img {
-                            grid-row: 1/4;
-                            grid-column: 3/4;
-                            width: 100%;
-                            max-width: 200px;
-                            align-self: end;
-                            justify-self: end;
-                            padding-right: 20px;
-                            z-index: 1;
-
-                            @media screen and (max-width: 750px) {
-                                grid-column: 2/3;
-                                align-self: start;
-                            }
-                            @media screen and (max-width: 900px) {
-                                align-self: center;
+                            #fakta-box-1 {
+                                @include partial.flex-column;
                                 margin-top: 50px;
+                                border-top: solid 1px black;
+                                border-bottom: solid 1px black;
+                                padding-top: 50px;
+                                padding-bottom: 50px;
+                                width: calc(100% - 400px - 100px);
+
+                                @media screen and (max-width: 780px) {
+                                    width: 100%;
+                                }
+        
+                                    #fakta-list {
+                                        display: flex;
+                                        flex-direction: row;
+                                        gap: 50px;
+                                        justify-content: space-between;
+                                        padding: 0 25px 0 25px;
+
+                                        @media screen and (max-width: 1140px) {
+                                            flex-direction: column;
+                                        }
+                                        @media screen and (max-width: 780px) {
+                                            flex-direction: row;
+                                        }
+                                        @media screen and (max-width: 500px) {
+                                            flex-direction: column;
+                                        }
+                                    }
+                                    a {
+                                        color: black;
+                                        padding: 0 25px 0 25px;
+                                    }
                             }
                         }
 
-                        #om-overskrift {
-                            grid-row: 2/3;
+                        #kontakt-info-container {
                             grid-column: 1/3;
-                            margin-top: 50px;
-                            padding-top: 50px;
-                            padding-bottom: 50px;
-                            margin-left: 20px;
-                            @include partial.responsive-padding;
-                            background-color: partial.$detalje-farve;
-
-                            @media screen and (max-width: 900px) {
-                                margin-right: 20px;
-                            }
-                        }
-
-                        #om-huset-tekst {
-                            grid-row: 3/4;
-                            grid-column: 1/3;
+                            grid-row: 1/3;
+                            width: 100%;
                             display: flex;
-                            flex-direction: row;
-                            gap: 50px;
-                            @include partial.responsive-padding-left;
-                            padding-right: 50px;
-                            padding-bottom: 50px;
-                            margin-left: 20px;
-                            justify-content: space-between;
-                            background-color: partial.$detalje-farve;
+                            justify-content: center;
+                            position: relative;
 
-                            @media screen and (max-width: 900px) {
-                                margin-right: 20px;
-                                @include partial.responsive-padding-right
+                            @media screen and (max-width: 1140px) {
+                                grid-column: 2/3;
+                                grid-row: 1/2;
                             }
-                            @media screen and (max-width: 750px) {
-                                flex-direction: column;
-                                gap: 20px;
+                            @media screen and (max-width: 780px) {
+                                grid-column: 1/2;
+                                grid-row: 2/3;
+                                margin: 50px 0 50px 0;
                             }
 
-                            #om-huset-tekst-column1 {
-                                flex: 1;
-                                
-                                    div {
-                                        display: flex;
-                                        flex-direction: column;
-                                        gap: 20px;
+                                #kontakt-info {
+                                    background-color: partial.$detalje-farve;
+                                    width: 400px;
+                                    padding: 25px;
+                                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                                    right: 0;
+                                    top: 50px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 25px;
+                                    position: absolute;
+
+                                    @media screen and (max-width: 780px) {
+                                        position: initial;
                                     }
-                            }
-    
-                            #om-huset-tekst-column2 {
-                                flex: 1;
-                                
-                                    div {
-                                        display: flex;
-                                        flex-direction: column;
-                                        gap: 20px;
+                                    @media screen and (max-width: 420px) {
+                                        width: 100%;
                                     }
+
+                                        .cta {
+                                            @include partial.cta($background-color: partial.$tekst-farve, $color: partial.$forside-baggrund)
+                                        }
+                                }
+                        }
+            
+                        #om-huset-tekst-column1 {
+                            grid-column: 1/2;
+                            grid-row: 2/3;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 25px;
+
+                            @media screen and (max-width: 780px) {
+                                grid-column: 1/2;
+                                grid-row: 3/4;
                             }
-                            
+                        }
+
+                        #om-huset-tekst-column2 {
+                            grid-column: 2/4;
+                            grid-row: 2/3;
+                            margin-top: 175px;
+
+                            @media screen and (max-width: 1140px) {
+                                grid-column: 2/3;
+                                margin-top: 75px;
+                            }
+                            @media screen and (max-width: 780px) {
+                                grid-column: 1/2;
+                                grid-row: 4/5;
+                                margin-top: 0;
+                            }
+                        }
+
+                        .om-brodtekst {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 25px;
                         }
                 }
 
-                #fakta-container {
-                    display: grid;
-                    grid-template-columns: 1fr 4fr;
-                    grid-template-rows: auto auto;
-                    row-gap: 50px;
+                #fakta2-container {
                     margin-top: 50px;
-
-                    @media screen and (max-width: 900px) {
-                        grid-template-columns: 1fr;
-                        grid-template-rows: auto auto auto;
-                        gap: 50px;
-                    }
-
-                        #sæl-img {
-                            grid-column: 1/2;
-                            grid-row: 1/2;
-                            width: 100%;
-                            max-width: 250px;
-                            align-self: end;
-                            justify-self: start;
-                            padding-left: 20px;
-
-                            @media screen and (max-width: 900px) {
-                                grid-column: 1/2;
-                                grid-row: 1/2;
-                                padding-right: 20px;
-                                justify-self: center;
-                            }
-                        }
+                    @include partial.responsive-padding;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 50px;
 
                         #fakta {
-                            grid-column: 2/3;
-                            grid-row: 1/2;
                             border-top: solid 1px black;
                             border-bottom: solid 1px black;
                             padding-top: 50px;
                             padding-bottom: 50px;
                             margin-right: 20px;
 
-                            @media screen and (max-width: 900px) {
-                                grid-column: 1/3;
-                                grid-row: 2/3;
-                                margin-left: 20px;
-                            }
-                            @media screen and (max-width: 700px) {
-                                margin-right: 10px;
-                                margin-left: 10px;
-                            }
-
                             #fakta-grid {
                                 display: grid;
                                 grid-template-columns: 1fr 1fr 1fr;
                                 gap: 50px;
-                                @include partial.responsive-padding-right;
-                                padding-left: 50px;
 
                                 @media screen and (max-width: 900px) {
                                     grid-template-columns: 1fr 1fr;
                                     grid-template-rows: auto auto;
-                                    @include partial.responsive-padding-left;
                                 }
                                 @media screen and (max-width: 500px) {
                                     grid-template-columns: 1fr;
@@ -413,7 +384,6 @@ body {
                                 }
 
                                 #fakta1 {
-                                    //font-family: 'Zapfino', sans-serif;
                                     grid-column: 1/2;
                                     display: flex;
                                     flex-direction: column;
@@ -425,7 +395,6 @@ body {
                                     }
                                 }
                                 #fakta2 {
-                                    //font-family: 'Zapfino', sans-serif;
                                     grid-column: 2/3;
                                     display: flex;
                                     flex-direction: column;
@@ -459,13 +428,7 @@ body {
 
                         .cta {
                             @include partial.cta($background-color: partial.$tekst-farve, $color: partial.$forside-baggrund);
-                            grid-column: 1/3;
-                            grid-row: 2/3;
-                            justify-self: center;
-                            
-                            @media screen and (max-width: 900px) {
-                                grid-row: 3/4;
-                            }
+                            align-self: center;
                         }
 
                 }
