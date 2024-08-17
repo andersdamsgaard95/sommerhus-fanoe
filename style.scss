@@ -231,7 +231,7 @@ body {
                                 @include partial.responsive-padding;
 
                                     a {
-                                        @include partial.cta($background-color: partial.$forside-baggrund);
+                                        @include partial.cta($background-color: partial.$forside-baggrund, $color: partial.$tekst-farve);
                                         transition: all 0.3s;
 
                                             &:hover {
@@ -687,8 +687,162 @@ body {
                         }
                 }
 
+                //BOOKING SIDE
+                #form-section {
+                    display: grid;
+                    grid-template-columns: 2fr 1fr;
+                    grid-template-rows: auto auto;
+                    column-gap: 100px;
+                    row-gap: 50px;
+                    @include partial.responsive-padding;
+
+                    @media screen and (max-width: 1100px) {
+                        grid-template-columns: 3fr 2fr;
+                    }
+                    @media screen and (max-width: 930px) {
+                        grid-template-columns: 1fr;
+                        grid-template-rows: auto auto auto;
+                    }
+
+                    #booking-side-tekst {
+                        grid-column: 1/2;
+                        grid-row: 1/2;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 25px;
+                        padding-top: 50px;
+                        padding-bottom: 50px;
+                    }
+
+                    #booking-side-tekst-bg {
+                        background-color: partial.$detalje-farve;
+                        grid-column: 1/3;
+                        grid-row: 1/2;
+                        z-index: -1;
+                        position: relative;
+                        width: 100vw;
+                        margin-left: calc(-50vw + 50%);
+
+                        @media screen and (max-width: 930px) {
+                            grid-column: 1/2;
+                            grid-row: 1/2;
+                        }
+                    }
+
+                    form {
+                        grid-column: 1/2;
+                        grid-row: 2/3;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 25px;
+                        width: 100%;
+                        //max-width: 600px;
+
+                        @media screen and (max-width: 930px) {
+                            grid-column: 1/2;
+                            grid-row: 3/4;
+                        }
+    
+                            label {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 5px;
+                            }
+                            input {
+                                min-height: 3em;
+                            }
+                            button {
+                                max-width: fit-content;
+                                @include partial.cta;
+                                font-size: 1rem;
+                                cursor: pointer;
+                                border: 0;
+                                font-family: 'Caladea', sans-serif;
+                                transition: all 0.3s;
+
+                                    &:hover {
+                                        scale: 105%;
+                                    }
+                            }
+                            #message {
+                                min-height: 100px;
+                            }
+                            #dato-container {
+                                display: flex;
+                                flex-direction: row;
+                                gap: 25px;
+                                width: 100%;
+
+                                    label {
+                                        flex: 1;
+                                    }
+                            }
+                            #antal-gæster {
+                                max-width: 50px;
+                            }
+                    }
+
+                    #booking-info-boks-container {
+                        grid-column: 2/3;
+                        grid-row: 1/3;
+                        margin-top: 50px;
+
+                        @media screen and (max-width: 930px) {
+                            grid-column: 1/2;
+                            grid-row: 2/3;
+                            margin-top: 0;
+                        }
+
+                            #booking-info-boks {
+                                background-color: white;
+                                height: fit-content;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 50px;
+                                position: sticky;
+                                top: 50px;
+
+
+                                    #booking-info-boks-img-container {
+                                        width: 100%;
+                                        height: 200px;
+
+                                            img {
+                                                object-fit: cover;
+                                                height: 100%;
+                                                width: 100%;
+                                            }
+                                    }
+                                    
+                                    #booking-info-boks-text {
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 25px;
+                                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                                        padding: 0 25px 25px 25px;
+
+                                        h2 {
+                                            padding-bottom: 25px;
+                                            border-bottom: 1px grey solid;
+                                        }
+
+                                            .kontakt-box-text-punkt {
+                                                display: flex;
+                                                flex-direction: row;
+                                                gap: 25px;
+
+                                                    img {
+                                                        height: 2em;
+                                                    }
+                                            }
+                                    }    
+                            }    
+                    }
+                }
+
 
         } //Main slut
+
         
 
         footer {

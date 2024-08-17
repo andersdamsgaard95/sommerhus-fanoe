@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanø sommerhus booking</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    
+    <!--HEADER-->
+    <header class="ygrid">
+        <div id="global-nav" class="content">
+            <a href="#" id="logo">
+                <img src="ikoner/oesterslagpng.png" alt="">
+                <h1>Sommerhus på Fanø</h1>
+            </a>
+            <nav id="header-nav">
+                <a href="#">Galleri</a>
+                <a href="#">Omgivelserne</a>
+                <a href="#">Book</a>
+            </nav>
+            <button id="burger-menu" aria-label="Toggle menu">
+                <img src="ikoner/hamburger-menu-ikon.png" alt="">
+            </button>
+            <nav id="burger-nav">
+                <a href="#">Galleri</a>
+                <a href="#">Omgivelserne</a>
+                <a href="#">Book</a>
+            </nav>
+        </div>
+    </header>
+
+    <!--MAIN-->
+    <main>
+        <section class="ygrid">
+            <div id="form-section" class="content">
+
+                <div id="booking-side-tekst">
+                    <h1>Lej Sommerhuset</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptates dolores perferendis error autem assumenda harum aut aliquam impedit minus. Quibusdam veritatis nam ea, modi neque dolorem nisi rem eius est blanditiis, explicabo ipsam quos mollitia commodi dignissimos nesciunt, dolorum architecto doloremque cumque exercitationem cupiditate accusamus minus. Ad, quos ratione.</p>
+                </div>
+
+                <div id="booking-side-tekst-bg"></div>
+
+                <form action="https://formspree.io/f/mpwalnba" method="POST">
+
+                    <label for="name">
+                        Navn:
+                        <input id="name" type="text" name="navn" required>
+                    </label>
+                    <label for="email">
+                        Din e-mail:
+                        <input id="email" type="email" name="email" required>
+                    </label>
+                    <div id="dato-container">
+                        <label for="start-dato">
+                            Ønsket ankomst dato:
+                            <input id="start-dato" type="date" name="start-dato" required>
+                        </label>
+                        <label for="hjemrejse-dato">
+                            Ønsket hjemrejse dato:
+                            <input id="hjemrejse-dato" type="date" name="hjemrejse-dato" required>
+                        </label>
+                    </div>
+                    <label for="email">
+                        Antal gæster:
+                        <input id="antal-gæster" type="number" name="antal-gæster" min="1" max="6" step="1" value="1" required>
+                    </label>
+                    <label for="message">
+                        Besked:
+                        <textarea id="message" name="message"></textarea>
+                    </label>
+                    <button type="submit">Send booking forespørgsel</button>
+        
+                </form>
+
+                <div id="booking-info-boks-container">
+                    <div id="booking-info-boks">
+                        <div id="booking-info-boks-img-container">
+                            <img src="img/hus-fra-siden.jpg" alt="">
+                        </div>
+                        <div id="booking-info-boks-text">
+                            <h2>Kontakt os med lejeforespørgsel</h2>
+                            <div class="kontakt-box-text-punkt">
+                                <img src="ikoner/nøgle-ikon.png" alt="">
+                                <p>Er I interesserede i at leje sommerhuset?</p>
+                            </div>
+                            <div class="kontakt-box-text-punkt">
+                                <img src="ikoner/kalender-ikon.png" alt="">
+                                <p>Fortæl os hvilke datoer I ønsker med antallet af gæster og send en forespørgsel.</p>
+                            </div>
+                            <div class="kontakt-box-text-punkt">
+                                <img src="ikoner/betaling-ikon.png" alt="">
+                                <p>Vi laver personlige booking-aftaler, og beregner den rette pris til jeres ophold.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -28,7 +28,7 @@ $tekst-farve: #364626;
 
 //MIXINS
 
-@mixin cta ($background-color: #F9F2D7, $color: #364626) {
+@mixin cta ($background-color: #364626, $color: #FEFBF3) {
     background-color: $background-color;
     color: $color;
     padding: 10px 30px 10px 30px;
