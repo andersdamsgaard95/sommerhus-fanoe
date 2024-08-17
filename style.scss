@@ -61,7 +61,7 @@ h3 {
 
 body {
     display: grid;
-    grid-template-rows: 75px 1fr 100px;
+    grid-template-rows: 80px 1fr 100px;
     min-height: 100vh;
     background-color: partial.$forside-baggrund;
 
@@ -112,7 +112,7 @@ body {
                                     transition: all 0.3s;
 
                                         &:hover {
-                                            scale: 120%;
+                                            scale: 105%;
                                         }
                                 }
                         }
@@ -131,7 +131,7 @@ body {
                             }
 
                                 img {
-                                    height: 1rem;
+                                    height: 3em;
                                 }
                         }
 
@@ -161,42 +161,77 @@ body {
             grid-row: 2/3;
 
                 #hero {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 50px;
+                    position: relative;
 
-                    #hero-img-container {
-                        height: 600px;
-                        margin-left: 20px;
-                        margin-right: 20px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        //overflow: hidden;
-                        position: relative;
+                    #hero-container {
+                        max-height: 650px;
+                        min-height: 400px;
+                        margin-left: 25px;
+                        margin-right: 25px;
+                        //position: relative;
+                        display: grid;
+                        grid-template-columns: 2fr 1fr 1fr;
+                        grid-template-rows: 3fr 2fr;
+                        gap: 15px;
 
-                        @media screen and (max-width: 900px) {
-                            height: 400px;
-                        }
                         @media screen and (max-width: 700px) {
                             margin-left: 10px;
                             margin-right: 10px;
+                            grid-template-columns: 1fr;
+                            grid-template-rows: 1fr;
                         }
 
-                            img {
+                            .hero-img-container {
+                                overflow: hidden;
+                                //position: relative;
+                            }
+                            .hero-img {
                                 width: 100%;
                                 height: 100%;
                                 object-fit: cover;
-                                //position: absolute;
+                                transition: all 0.3s;
+                                cursor: pointer;
+                                
+                                    &:hover {
+                                        scale: 101.5%;
+                                    }
+                            }
+                            #hero-img1 {
+                                grid-column: 1/2;
+                                grid-row: 1/2;
+                            }
+                            #hero-img2 {
+                                grid-column: 1/2;
+                                grid-row: 2/3;
+
+                                @media screen and (max-width: 700px) {
+                                    display: none;
+                                }
+                            }
+                            #hero-img3 {
+                                grid-column: 2/3;
+                                grid-row: 1/3;
+
+                                @media screen and (max-width: 700px) {
+                                    display: none;
+                                }
+                            }
+                            #hero-img4 {
+                                grid-column: 3/4;
+                                grid-row: 1/3;
+
+                                @media screen and (max-width: 700px) {
+                                    display: none;
+                                }
                             }
                             #hero-cta {
                                 position: absolute;
                                 bottom: 50px;
-                                left: 0;
+                                left: 10px;
                                 @include partial.responsive-padding;
 
                                     a {
-                                        @include partial.cta;
+                                        @include partial.cta($background-color: partial.$forside-baggrund);
                                         transition: all 0.3s;
 
                                             &:hover {
@@ -206,187 +241,195 @@ body {
                                     }
                             }
                     }
-
-                    h2 {
-                        @include partial.responsive-padding;
-                        max-width: 900px;
-
-                        @media screen and (max-width: 1000px) {
-                            max-width: 800px;
-                        }
-                        @media screen and (max-width: 900px) {
-                            max-width: 700px;
-                        }
-                        @media screen and (max-width: 800px) {
-                            max-width: 600px;
-                        }
-                    }
                         
                 }
 
                 #fakta-kontakt {
                     display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    grid-template-rows: auto auto;
-                    gap: 50px;
+                    grid-template-columns: 1fr 400px;
+                    grid-template-rows: auto auto auto;
+                    column-gap: 100px;
+                    margin-top: 50px;
                     @include partial.responsive-margin;
 
+                    @media screen and (max-width: 1200px) {
+                        grid-template-columns: 1fr 1fr;
+                    }
                     @media screen and (max-width: 780px) {
                         grid-template-columns: 1fr;
                         grid-template-rows: auto auto auto auto;
                         gap: 0;
                     }
 
-                        #fakta-box-1-container {
-                            grid-column: 1/3;
+                        h2 {
+                            grid-column: 1/2;
                             grid-row: 1/2;
-
-                            @media screen and (max-width: 780px) {
-                                grid-column: 1/2;
-                                grid-row: 1/2;
-                            }
+                        }
+                    
+                        #fakta-box-1-container {
+                            grid-column: 1/2;
+                            grid-row: 2/3;
 
                             #fakta-box-1 {
                                 @include partial.flex-column;
-                                margin-top: 50px;
-                                border-top: solid 1px black;
-                                border-bottom: solid 1px black;
+                                //margin-top: 25px;
+                                //border-top: solid 1px black;
+                                //border-bottom: solid 1px black;
                                 padding-top: 50px;
                                 padding-bottom: 50px;
-                                width: calc(100% - 400px - 100px);
+                                width: 100%;
+                                //width: calc(100% - 400px - 100px);
 
-                                @media screen and (max-width: 780px) {
+                                /*@media screen and (max-width: 780px) {
                                     width: 100%;
-                                }
+                                }*/
         
                                     #fakta-list {
                                         display: flex;
                                         flex-direction: row;
-                                        gap: 50px;
+                                        gap: 25px;
                                         justify-content: space-between;
-                                        padding: 0 25px 0 25px;
+                                        //padding: 0 25px 0 25px;
 
-                                        @media screen and (max-width: 1140px) {
+                                        @media screen and (max-width: 1300px) {
                                             flex-direction: column;
                                         }
                                         @media screen and (max-width: 780px) {
                                             flex-direction: row;
                                         }
-                                        @media screen and (max-width: 500px) {
+                                        @media screen and (max-width: 600px) {
                                             flex-direction: column;
                                         }
 
                                             .fakta-list-punkt {
                                                 display: flex;
                                                 flex-direction: column;
-                                                gap: 20px;
+                                                gap: 10px;
                                                 align-items: center;
 
-                                                @media screen and (max-width: 1140px) {
+                                                @media screen and (max-width: 1300px) {
                                                     flex-direction: row;
                                                 }
                                                 @media screen and (max-width: 780px) {
                                                     flex-direction: column;
                                                 }
-                                                @media screen and (max-width: 500px) {
+                                                @media screen and (max-width: 600px) {
                                                     flex-direction: row;
                                                 }
 
                                                     img {
-                                                        width: 50px;
+                                                        height: 2em;
                                                         align-self: center;
+                                                    }
+                                                    .vis-kort {
+                                                        cursor: pointer;
+                                                        font-size: 0.8em;
+                                                        color: grey;
+                                                        text-decoration: underline;
+                                                    }
+                                                    #google-map {
+                                                        position: fixed;
+                                                        z-index: 11;
+                                                        top: 50%;
+                                                        left: 50%;
+                                                        width: 90%;
+                                                        transform: translate(-50%, -50%);
+
+                                                        p {
+                                                            position: absolute;
+                                                            top: 5px;
+                                                            right: 10px;
+                                                            color: black;
+                                                            text-decoration: underline;
+                                                            cursor: pointer;
+                                                        }
                                                     }
                                             }
                                     }
                                     a {
                                         color: partial.$tekst-farve;
-                                        padding-left: 25px;
-                                        padding-right: 25px;
                                         z-index: 1;
                                     }
                             }
                         }
 
                         #kontakt-info-container {
-                            grid-column: 1/3;
-                            grid-row: 1/3;
+                            grid-column: 2/3;
+                            grid-row: 1/4;
                             width: 100%;
                             display: flex;
                             justify-content: center;
-                            position: relative;
+                            //position: relative;
 
-                            @media screen and (max-width: 1140px) {
-                                grid-column: 2/3;
-                                grid-row: 1/2;
-                            }
                             @media screen and (max-width: 780px) {
                                 grid-column: 1/2;
-                                grid-row: 2/3;
-                                margin: 50px 0 50px 0;
+                                grid-row: 3/4;
+                                margin-bottom: 50px;
                             }
 
                                 #kontakt-info {
-                                    background-color: partial.$detalje-farve;
-                                    width: 400px;
+                                    background-color: white;
+                                    margin-top: 0px;
+                                    height: fit-content;
                                     padding: 25px;
                                     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
                                     right: 0;
                                     top: 50px;
                                     display: flex;
                                     flex-direction: column;
-                                    gap: 25px;
-                                    position: absolute;
+                                    gap: 50px;
+                                    position: sticky;
 
-                                    @media screen and (max-width: 780px) {
-                                        position: initial;
-                                    }
                                     @media screen and (max-width: 420px) {
                                         width: 100%;
                                     }
 
+                                        h3 {
+                                            //align-self: center;
+                                        }
+
                                         #kontakt-box-text {
                                             display: flex;
                                             flex-direction: column;
-                                            gap: 1em;
+                                            gap: 25px;
+
+                                                .kontakt-box-text-punkt {
+                                                    display: flex;
+                                                    flex-direction: row;
+                                                    gap: 25px;
+
+                                                        img {
+                                                            height: 2em;
+                                                        }
+                                                }
                                         }
 
                                         .cta {
-                                            @include partial.cta($background-color: partial.$tekst-farve, $color: partial.$forside-baggrund);
+                                            @include partial.cta($background-color: partial.$tekst-farve, $color: partial.$forside-baggrund,);
                                             transition: all 0.3s;
+                                            //align-self: center;
 
                                                 &:hover {
                                                     scale: 105%;
                                                 }
                                         }
                                 }
+
                         }
             
                         #om-huset-tekst-column1 {
                             grid-column: 1/2;
-                            grid-row: 2/3;
+                            grid-row: 3/4;
                             display: flex;
                             flex-direction: column;
                             gap: 25px;
+                            padding-top: 50px;
+                            padding-bottom: 50px;
+                            border-bottom: solid 1px partial.$tekst-farve;
 
-                            @media screen and (max-width: 780px) {
-                                grid-column: 1/2;
-                                grid-row: 3/4;
-                            }
-                        }
-
-                        #om-huset-tekst-column2 {
-                            grid-column: 2/4;
-                            grid-row: 2/3;
-                            margin-top: 75px;
-
-                            @media screen and (max-width: 1140px) {
-                                grid-column: 2/3;
-                                margin-top: 75px;
-                            }
                             @media screen and (max-width: 780px) {
                                 grid-column: 1/2;
                                 grid-row: 4/5;
-                                margin-top: 0;
                             }
                         }
 
@@ -394,27 +437,146 @@ body {
                             display: flex;
                             flex-direction: column;
                             gap: 1em;
+
+                                .sløret-text {
+                                    opacity: 70%;
+                                    transition: all 1s;
+                                }
+
+                                .gemt-text {
+                                    //display: none;
+                                    max-height: 0;
+                                    overflow: hidden;
+                                    transition: all 1s;
+                                }
+                                .gemt-text.show {
+                                    max-height: 100%;
+                                }
+
+                                .vis-om-text-knap {
+                                    margin-top: 15px;
+                                    cursor: pointer;
+                                    display: flex;
+                                    flex-direction: row;
+                                    gap: 5px;
+                                    align-items: center;
+
+                                        img {
+                                            height: 1.5em;
+                                        }
+                                        p {
+                                            text-decoration: underline;
+                                            color: black;
+                                        }
+                                }
+                        }
+                        .bg-green {
+                            background-color: partial.$detalje-farve;
+                            grid-column: 1/3;
+                            grid-row: 3/4;
+                            z-index: -1;
+                            width: 100vw;
+                            position: relative;
+                            margin-left: calc(-50vw + 50%);
+
+                            @media screen and (max-width: 780px) {
+                                grid-column: 1/2;
+                                grid-row: 4/5;
+                            }
                         }
                 }
 
-                #fakta2-container {
+                #forside-galleri-container {
+                    display: grid;
+                    grid-template-columns: auto auto auto auto;
+                    grid-template-rows: auto auto auto auto;
+                    gap: 15px;
+                    max-height: 2000px;
+                    @include partial.responsive-margin;
+                    //max-height: 2000px;
                     margin-top: 50px;
+
+                        .forside-galleri-img-container {
+                            overflow: hidden;
+                            
+                                img {
+                                    object-fit: cover;
+                                    height: 100%;
+                                    width: 100%;
+                                    transition: all 0.3s;
+
+                                        &:hover {
+                                            scale: 101.5%;
+                                        }
+                                }
+                        }
+
+                        #forside-galleri-img1 {
+                            grid-column: 1/3;
+                            grid-row: 1/2;
+                        }
+                        #forside-galleri-img2 {
+                            grid-column: 1/3;
+                            grid-row: 2/3;
+
+                                img {
+                                    object-position: bottom;
+                                }
+                        }
+                        #forside-galleri-img3 {
+                            grid-column: 3/5;
+                            grid-row: 1/3;
+                        }
+                        #forside-galleri-img4 {
+                            grid-column: 1/4;
+                            grid-row: 3/4;
+
+                                img {
+                                    object-position: bottom;
+                                }
+                        }
+                        #forside-galleri-img5 {
+                            grid-column: 4/5;
+                            grid-row: 3/4;
+                        }
+                        #forside-galleri-img6 {
+                            grid-column: 1/2;
+                            grid-row: 4/5;
+
+                                img {
+                                    object-position: right;
+                                }
+                        }
+                        #forside-galleri-img7 {
+                            grid-column: 2/5;
+                            grid-row: 4/5;
+                        }
+                }
+
+
+
+                #fakta2-container {
+                    //margin-top: 50px;
                     @include partial.responsive-padding;
                     display: flex;
                     flex-direction: column;
                     gap: 50px;
 
                         #fakta-box2 {
-                            border-top: solid 1px black;
-                            border-bottom: solid 1px black;
+                            //border-top: solid 1px black;
+                            //border-bottom: solid 1px black;
                             padding-top: 50px;
-                            padding-bottom: 50px;
-                            margin-right: 20px;
+                            //padding-bottom: 50px;
+                            //margin-right: 20px;
 
                             #fakta-grid {
                                 display: grid;
                                 grid-template-columns: 1fr 1fr 1fr;
+                                grid-template-rows: auto;
                                 gap: 50px;
+                                position: relative;
+                                padding-top: 50px;
+                                padding-bottom: 50px;
 
                                 @media screen and (max-width: 900px) {
                                     grid-template-columns: 1fr 1fr;
@@ -424,6 +586,24 @@ body {
                                     grid-template-columns: 1fr;
                                     grid-template-rows: auto auto auto;
                                 }
+
+                                    .fakta2-punkt {
+                                        display: flex;
+                                        flex-direction: row;
+                                        gap: 10px;
+                                        align-items: center;
+
+                                            img {
+                                                height: 1em;
+                                            }
+                                    }
+
+                                    .vis-kort {
+                                        cursor: pointer;
+                                        font-size: 0.8em;
+                                        color: grey;
+                                        text-decoration: underline;
+                                    }
 
                                     #fakta1 {
                                         grid-column: 1/2;
@@ -465,12 +645,30 @@ body {
                                             grid-row: 3/4;
                                         }
                                     }
+
+                                    //Baggrundsfarve til grid
+                                    .bg-beige {
+                                        background-color: partial.$detalje-farve;
+                                        z-index: -1;
+                                        width: 100vw;
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        right: 0;
+                                        bottom: 0;
+                                        margin-left: calc(-50vw + 50%);
+                                    }
                             }
                         }
 
                         .cta {
                             @include partial.cta($background-color: partial.$tekst-farve, $color: partial.$forside-baggrund);
                             align-self: center;
+                            transition: all 0.3s;
+
+                                &:hover {
+                                    scale: 105%;
+                                }
                         }
 
                 }

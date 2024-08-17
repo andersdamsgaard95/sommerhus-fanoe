@@ -18,15 +18,15 @@
                 <h1>Sommerhus på Fanø</h1>
             </a>
             <nav id="header-nav">
-                <a href="#">Om huset</a>
+                <a href="#">Galleri</a>
                 <a href="#">Omgivelserne</a>
                 <a href="#">Book</a>
             </nav>
             <button id="burger-menu" aria-label="Toggle menu">
-                <img src="ikoner/bruger-menu.svg" alt="">
+                <img src="ikoner/hamburger-menu-ikon.png" alt="">
             </button>
             <nav id="burger-nav">
-                <a href="#">Om huset</a>
+                <a href="#">Galleri</a>
                 <a href="#">Omgivelserne</a>
                 <a href="#">Book</a>
             </nav>
@@ -38,13 +38,23 @@
         <!--HERO-->
         <section class="ygrid">
             <div id="hero" class="content">
-                <div id="hero-img-container">
-                    <img src="img/midlertidig-hero.png" alt="Sommerhus på Fanø">
+                <div id="hero-container">
+                    <a href="#" class="hero-img-container" id="hero-img1">
+                        <img class="hero-img" src="img/hus-fra-siden.jpg" alt="Sommerhus på Fanø">
+                    </a>
+                    <a href="#" class="hero-img-container" id="hero-img2">
+                        <img class="hero-img" src="img/hero.jpg" alt="">
+                    </a>
+                    <a href="#" class="hero-img-container" id="hero-img3">
+                        <img class="hero-img" src="img/stue.jpg" alt="">
+                    </a>
+                    <a href="#" class="hero-img-container" id="hero-img4">
+                        <img class="hero-img" src="img/lys-i-vindue.jpg" alt="">
+                    </a>
                     <div id="hero-cta">
                         <a class="cta" href="#">Se alle billeder</a>
                     </div>
                 </div>
-                <h2 class="content">Gemt i lynget bag klitterne tæt på natur og by, finder du det blå træbeklædte sommerhus. <br> Velkommen til Fanø!</h2>
             </div>
         </section>
 
@@ -53,20 +63,32 @@
             <div id="fakta-kontakt" class="content">
 
                 <!--FAKTA BOX 1-->
+                <h2>Gemt i lynget bag klitterne tæt på natur og by, finder du det blå træbeklædte sommerhus. <br> Velkommen til Fanø!</h2>
+
                 <div id="fakta-box-1-container">
                     <div id="fakta-box-1">
                         <div id="fakta-list">
                             <div class="fakta-list-punkt">
-                                <img src="ikoner/soveværelser-ikon.png" alt="">
+                                <img src="ikoner/kort-ikon-sort.png" alt="">
+                                <p>Sønderho, Fanø</p>
+                                <p class="vis-kort">Vis kort</p>
+                                <div id="google-map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d88934.37048774683!2d8.34980323151793!3d55.406022557204366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464b28c7f87b3739%3A0x18e5cd37d9840962!2sJens%20Hansens%20Toft%207%2C%206720%20Fan%C3%B8!5e0!3m2!1sen!2sdk!4v1723718653431!5m2!1sen!2sdk" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    <p id="luk-kort">Luk kort</p>
+                                </div>
+                            </div>
+                            <div class="fakta-list-punkt">
+                                <img src="ikoner/seng-ikon-sort.png" alt="">
                                 <p>3 soveværelser</p>
                             </div>
                             <div class="fakta-list-punkt">
-                                <img src="ikoner/senge-ikon.png" alt="">
-                                <p>Op til 6 sovepladser</p>
+                                <img src="ikoner/person-ikon.png" alt="">
+                                <p>Op til 6 sovende gæster</p>
                             </div>
                             <div class="fakta-list-punkt">
                                 <img src="ikoner/hus-ikon.png" alt="">
-                                <p>60kvm</p>
+                                <p>60m<sup>2</sup>
+                                </p>
                             </div>
                         </div>
                         <a href="#fakta2-container">Se alle fakta</a>
@@ -76,11 +98,20 @@
                 <!--KONTAKT BOX-->
                 <div id="kontakt-info-container">
                     <div id="kontakt-info">
-                        <h3>Kontakt for booking</h3>
+                        <h3>Lej sommerhuset</h3>
                         <div id="kontakt-box-text">
-                            <p>Er I interesserede i at leje sommerhuset?</p>
-                            <p>Fortæl os hvilke datoer I ønsker med antallet af gæster og send en forespørgsel.</p>
-                            <p>Vi laver personlige booking-aftaler, og beregner den rette pris til jeres ophold.</p>
+                            <div class="kontakt-box-text-punkt">
+                                <img src="ikoner/nøgle-ikon.png" alt="">
+                                <p>Er I interesserede i at leje sommerhuset?</p>
+                            </div>
+                            <div class="kontakt-box-text-punkt">
+                                <img src="ikoner/kalender-ikon.png" alt="">
+                                <p>Fortæl os hvilke datoer I ønsker med antallet af gæster og send en forespørgsel.</p>
+                            </div>
+                            <div class="kontakt-box-text-punkt">
+                                <img src="ikoner/betaling-ikon.png" alt="">
+                                <p>Vi laver personlige booking-aftaler, og beregner den rette pris til jeres ophold.</p>
+                            </div>
                         </div>
                         <a class="cta" href="#">Kontakt for booking</a>
                     </div>
@@ -95,18 +126,47 @@
                     <!--Om brødtekst column 1-->
                     <div class="om-brodtekst">
                         <p>Gemt bag træer og buske, finder du det hyggelige sommerhus udstykket i træ. Huset ligger på en grund med massere af privatliv og naturen lige ude foran hoveddøren. Med 3 soveværelser, toilet og bad, køkkenallerum og stue, er der plads til 5 sovende gæster (6 personer, hvis man deler 1,5 værelset).</p>
-                        <p>Værelserne består af to rum hver med dobbeltseng, og et rum med to enkeltmandssenge.</p>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis voluptas sunt delectus illum, suscipit libero maiores, enim nisi ipsum et itaque minus unde dolore quisquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus obcaecati doloremque ea, quo est recusandae nesciunt labore facere facilis. Fugit?</p>
+                        <p class="sløret-text">Værelserne består af to rum hver med dobbeltseng, og et rum med to enkeltmandssenge.</p>
+                        <div class="gemt-text om-brodtekst">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis voluptas sunt delectus illum, suscipit libero maiores, enim nisi ipsum et itaque minus unde dolore quisquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus obcaecati doloremque ea, quo est recusandae nesciunt labore facere facilis. Fugit?</p>
+                            <p>Huset er møbleret, inklusiv sengetøj og håndklæder.</p>
+                            <p>Udenfor finder du både overdækket terrasse med indgang til stuen, og et udendørs spiseområde ved hovedindgangen.</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit sit laboriosam pariatur sapiente incidunt dolore ducimus nobis quisquam vel assumenda doloribus, esse, ullam, sint voluptatibus.</p>
+                        </div>
+                        <div class="vis-om-text-knap">
+                            <img class="drop-down-pil" src="ikoner/pil-ned-ikon.png" alt="">
+                            <p class="vis-mere-eller-mindre">Læs fuld beskrivelse</p>
+                        </div>
                     </div>
                 </div>
-                <div id="om-huset-tekst-column2">
-                    <!--Om brødtekst column 2-->
-                    <div class="om-brodtekst">
-                        <p>Huset er møbleret, inklusiv sengetøj og håndklæder.</p>
-                        <p>Udenfor finder du både overdækket terrasse med indgang til stuen, og et udendørs spiseområde ved hovedindgangen.</p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit sit laboriosam pariatur sapiente incidunt dolore ducimus nobis quisquam vel assumenda doloribus, esse, ullam, sint voluptatibus.</p>
-                    </div>
-                </div>
+                <div class="bg-green"></div>
+            </div>
+        </section>
+
+        <!--FORSIDE GALLERI-->
+        <section class="ygrid">
+            <div class="content" id="forside-galleri-container">
+                <a href="#" class="forside-galleri-img-container" id="forside-galleri-img1">
+                    <img src="img/forside-gallery/terresse.jpg" alt="">
+                </a>
+                <a href="#" class="forside-galleri-img-container" id="forside-galleri-img2">
+                    <img src="img/forside-gallery/soveværelse1.jpg" alt="">
+                </a>
+                <a href="#" class="forside-galleri-img-container" id="forside-galleri-img5">
+                    <img src="img/forside-gallery/køkken.jpg" alt="">
+                </a>
+                <a href="#" class="forside-galleri-img-container" id="forside-galleri-img4">
+                    <img src="img/forside-gallery/soveværelse2.1.jpg" alt="">
+                </a>
+                <a href="#" class="forside-galleri-img-container" id="forside-galleri-img3">
+                    <img src="img/forside-gallery/vindue-udefra.jpg" alt="">
+                </a>
+                <a href="#" class="forside-galleri-img-container" id="forside-galleri-img6">
+                    <img src="img/forside-gallery/rosé.jpg" alt="">
+                </a>
+                <a href="#" class="forside-galleri-img-container" id="forside-galleri-img7">
+                    <img src="img/forside-gallery/fisk-på-grill.jpg" alt="">
+                </a>
             </div>
         </section>
 
@@ -118,33 +178,98 @@
             <div id="fakta2-container" class="content">
                 <div id="fakta-box2">
                     <div id="fakta-grid">
+
                         <div id="fakta1">
                             <h3>Sommerhuset</h3>
-                            <p>60 kvm</p>
-                            <p>3 soveværelser og 4 senge</p>
-                            <p>køkkenallerum med fuld service</p>
-                            <p>Badeværelse med toilet og bad</p>
-                            <p>2 terrasser med henholdsvis morgen og aften sol</p>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/hus-ikon.png" alt="">
+                                <p>60 m<sup>2</sup></p>
+                            </div>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/kort-ikon-sort.png" alt="">
+                                <p>Sønderho, Fanø</p>
+                                <p class="vis-kort">Vis Kort</p>
+                            </div>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/seng-ikon-sort.png" alt="">
+                                <p>3 soveværelser og 4 senge</p>
+                            </div>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/person-ikon.png" alt="">
+                                <p>Op til 6 sovende gæster</p>
+                            </div>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/gryde-ikon.png" alt="">
+                                <p>køkkenallerum med fuld service</p>
+                            </div>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/wc-ikon.png" alt="">
+                                <p>Badeværelse med toilet og bad</p>
+                            </div>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/sol-ikon.png" alt="">
+                                <p>2 terrasser med henholdsvis morgen og aften sol</p>
+                            </div>  
                         </div>
         
                         <div id="fakta2">
                             <h3>Inkluderet</h3>
-                            <p>Gasgrill</p>
-                            <p>WiFi</p>
-                            <p>Kaffemaskine</p>
-                            <p>Opvaskemaskine</p>
-                            <p>Sengelinnen og håndklæder</p>
-                            <p>Viskestykker og karklude</p>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/grill-ikon.png" alt="">
+                                <p>Gasgrill</p>
+                            </div>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/wifi-ikon.png" alt="">
+                                <p>WiFi</p>
+                            </div>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/kaffemaksine-ikon.png" alt="">
+                                <p>Kaffemaskine</p>
+                            </div>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/opvaskemaskine-ikon.png" alt="">
+                                <p>Opvaskemaskine</p>
+                            </div>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/brusebad-ikon.png" alt="">
+                                <p>Sengelinnen og håndklæder</p>
+                            </div>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/viskestykke-ikon.png" alt="">
+                                <p>Viskestykker og karklude</p>
+                            </div>  
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/vaskemaskine-ikon.png" alt="">
+                                <p>Vaskemaskine</p>
+                            </div>
                         </div>
         
                         <div id="fakta3">
                             <h3>Husets regler</h3>
-                            <p>Babyer, småbørn og børn er velkomne</p>
-                            <p>Rygning forbudt</p>
-                            <p>Kæledyr er ikke tilladt</p>
-                            <p>Fester er ikke tilladt</p>
-                            <p>Opladning af elbil ikke tilladt</p>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/børn-ikon.png" alt="">
+                                <p>Babyer, småbørn og børn er velkomne</p>
+                            </div>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/nosmoking-ikon.png" alt="">
+                                <p>Rygning forbudt</p>
+                            </div>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/block-ikon.png" alt="">
+                                <p>Kæledyr er ikke tilladt</p>
+                            </div>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/block-ikon.png" alt="">
+                                <p>Fester er ikke tilladt</p>
+                            </div>
+                            <div class="fakta2-punkt">
+                                <img src="ikoner/block-ikon.png" alt="">
+                                <p>Opladning af elbil ikke tilladt</p>
+                            </div>
                         </div>
+
+                        <!--Baggrundsfarve til grid-->
+                        <div class="bg-beige"></div>
 
                     </div>
                 </div>

@@ -56,7 +56,7 @@ h3 {
 
 body {
   display: grid;
-  grid-template-rows: 75px 1fr 100px;
+  grid-template-rows: 80px 1fr 100px;
   min-height: 100vh;
   background-color: #FEFBF3;
 }
@@ -119,7 +119,7 @@ body header #global-nav #header-nav a {
   transition: all 0.3s;
 }
 body header #global-nav #header-nav a:hover {
-  scale: 120%;
+  scale: 105%;
 }
 body header #global-nav #burger-menu {
   display: none;
@@ -136,7 +136,7 @@ body header #global-nav #burger-menu {
   }
 }
 body header #global-nav #burger-menu img {
-  height: 1rem;
+  height: 3em;
 }
 body header #global-nav #burger-nav {
   display: none;
@@ -160,57 +160,92 @@ body main {
   grid-row: 2/3;
 }
 body main #hero {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-body main #hero #hero-img-container {
-  height: 600px;
-  margin-left: 20px;
-  margin-right: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
 }
-@media screen and (max-width: 900px) {
-  body main #hero #hero-img-container {
-    height: 400px;
-  }
+body main #hero #hero-container {
+  max-height: 650px;
+  min-height: 400px;
+  margin-left: 25px;
+  margin-right: 25px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 3fr 2fr;
+  gap: 15px;
 }
 @media screen and (max-width: 700px) {
-  body main #hero #hero-img-container {
+  body main #hero #hero-container {
     margin-left: 10px;
     margin-right: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
   }
 }
-body main #hero #hero-img-container img {
+body main #hero #hero-container .hero-img-container {
+  overflow: hidden;
+}
+body main #hero #hero-container .hero-img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: all 0.3s;
+  cursor: pointer;
 }
-body main #hero #hero-img-container #hero-cta {
+body main #hero #hero-container .hero-img:hover {
+  scale: 101.5%;
+}
+body main #hero #hero-container #hero-img1 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+body main #hero #hero-container #hero-img2 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+@media screen and (max-width: 700px) {
+  body main #hero #hero-container #hero-img2 {
+    display: none;
+  }
+}
+body main #hero #hero-container #hero-img3 {
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+@media screen and (max-width: 700px) {
+  body main #hero #hero-container #hero-img3 {
+    display: none;
+  }
+}
+body main #hero #hero-container #hero-img4 {
+  grid-column: 3/4;
+  grid-row: 1/3;
+}
+@media screen and (max-width: 700px) {
+  body main #hero #hero-container #hero-img4 {
+    display: none;
+  }
+}
+body main #hero #hero-container #hero-cta {
   position: absolute;
   bottom: 50px;
-  left: 0;
+  left: 10px;
   padding-left: 100px;
   padding-right: 100px;
 }
 @media screen and (max-width: 900px) {
-  body main #hero #hero-img-container #hero-cta {
+  body main #hero #hero-container #hero-cta {
     padding-left: 50px;
     padding-right: 50px;
   }
 }
 @media screen and (max-width: 700px) {
-  body main #hero #hero-img-container #hero-cta {
+  body main #hero #hero-container #hero-cta {
     padding-left: 10px;
     padding-right: 10px;
   }
 }
-body main #hero #hero-img-container #hero-cta a {
-  background-color: #F9F2D7;
+body main #hero #hero-container #hero-cta a {
+  background-color: #FEFBF3;
   color: #364626;
   padding: 10px 30px 10px 30px;
   max-width: -moz-fit-content;
@@ -220,47 +255,17 @@ body main #hero #hero-img-container #hero-cta a {
   border-radius: 10px;
   transition: all 0.3s;
 }
-body main #hero #hero-img-container #hero-cta a:hover {
+body main #hero #hero-container #hero-cta a:hover {
   color: #F9F2D7;
   background-color: #364626;
 }
-body main #hero h2 {
-  padding-left: 100px;
-  padding-right: 100px;
-  max-width: 900px;
-}
-@media screen and (max-width: 900px) {
-  body main #hero h2 {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-}
-@media screen and (max-width: 700px) {
-  body main #hero h2 {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-@media screen and (max-width: 1000px) {
-  body main #hero h2 {
-    max-width: 800px;
-  }
-}
-@media screen and (max-width: 900px) {
-  body main #hero h2 {
-    max-width: 700px;
-  }
-}
-@media screen and (max-width: 800px) {
-  body main #hero h2 {
-    max-width: 600px;
-  }
-}
 body main #fakta-kontakt {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 50px;
+  grid-template-columns: 1fr 400px;
+  grid-template-rows: auto auto auto;
+  -moz-column-gap: 100px;
+       column-gap: 100px;
+  margin-top: 50px;
   margin-left: 100px;
   margin-right: 100px;
 }
@@ -276,6 +281,11 @@ body main #fakta-kontakt {
     margin-right: 10px;
   }
 }
+@media screen and (max-width: 1200px) {
+  body main #fakta-kontakt {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 @media screen and (max-width: 780px) {
   body main #fakta-kontakt {
     grid-template-columns: 1fr;
@@ -283,40 +293,32 @@ body main #fakta-kontakt {
     gap: 0;
   }
 }
-body main #fakta-kontakt #fakta-box-1-container {
-  grid-column: 1/3;
+body main #fakta-kontakt h2 {
+  grid-column: 1/2;
   grid-row: 1/2;
 }
-@media screen and (max-width: 780px) {
-  body main #fakta-kontakt #fakta-box-1-container {
-    grid-column: 1/2;
-    grid-row: 1/2;
-  }
+body main #fakta-kontakt #fakta-box-1-container {
+  grid-column: 1/2;
+  grid-row: 2/3;
 }
 body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 {
   display: flex;
   flex-direction: column;
   gap: 50px;
-  margin-top: 50px;
-  border-top: solid 1px black;
-  border-bottom: solid 1px black;
   padding-top: 50px;
   padding-bottom: 50px;
-  width: calc(100% - 400px - 100px);
-}
-@media screen and (max-width: 780px) {
-  body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 {
-    width: 100%;
-  }
+  width: 100%;
+  /*@media screen and (max-width: 780px) {
+      width: 100%;
+  }*/
 }
 body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list {
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 25px;
   justify-content: space-between;
-  padding: 0 25px 0 25px;
 }
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1300px) {
   body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list {
     flex-direction: column;
   }
@@ -326,7 +328,7 @@ body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list {
     flex-direction: row;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list {
     flex-direction: column;
   }
@@ -334,10 +336,10 @@ body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list {
 body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list .fakta-list-punkt {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
 }
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1300px) {
   body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list .fakta-list-punkt {
     flex-direction: row;
   }
@@ -347,58 +349,68 @@ body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list .fakta-
     flex-direction: column;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list .fakta-list-punkt {
     flex-direction: row;
   }
 }
 body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list .fakta-list-punkt img {
-  width: 50px;
+  height: 2em;
   align-self: center;
+}
+body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list .fakta-list-punkt .vis-kort {
+  cursor: pointer;
+  font-size: 0.8em;
+  color: grey;
+  text-decoration: underline;
+}
+body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list .fakta-list-punkt #google-map {
+  position: fixed;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
+}
+body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list .fakta-list-punkt #google-map p {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
 }
 body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 a {
   color: #364626;
-  padding-left: 25px;
-  padding-right: 25px;
   z-index: 1;
 }
 body main #fakta-kontakt #kontakt-info-container {
-  grid-column: 1/3;
-  grid-row: 1/3;
+  grid-column: 2/3;
+  grid-row: 1/4;
   width: 100%;
   display: flex;
   justify-content: center;
-  position: relative;
-}
-@media screen and (max-width: 1140px) {
-  body main #fakta-kontakt #kontakt-info-container {
-    grid-column: 2/3;
-    grid-row: 1/2;
-  }
 }
 @media screen and (max-width: 780px) {
   body main #fakta-kontakt #kontakt-info-container {
     grid-column: 1/2;
-    grid-row: 2/3;
-    margin: 50px 0 50px 0;
+    grid-row: 3/4;
+    margin-bottom: 50px;
   }
 }
 body main #fakta-kontakt #kontakt-info-container #kontakt-info {
-  background-color: #F9F2D7;
-  width: 400px;
+  background-color: white;
+  margin-top: 0px;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 25px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   right: 0;
   top: 50px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  position: absolute;
-}
-@media screen and (max-width: 780px) {
-  body main #fakta-kontakt #kontakt-info-container #kontakt-info {
-    position: initial;
-  }
+  gap: 50px;
+  position: sticky;
 }
 @media screen and (max-width: 420px) {
   body main #fakta-kontakt #kontakt-info-container #kontakt-info {
@@ -408,7 +420,15 @@ body main #fakta-kontakt #kontakt-info-container #kontakt-info {
 body main #fakta-kontakt #kontakt-info-container #kontakt-info #kontakt-box-text {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 25px;
+}
+body main #fakta-kontakt #kontakt-info-container #kontakt-info #kontakt-box-text .kontakt-box-text-punkt {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+body main #fakta-kontakt #kontakt-info-container #kontakt-info #kontakt-box-text .kontakt-box-text-punkt img {
+  height: 2em;
 }
 body main #fakta-kontakt #kontakt-info-container #kontakt-info .cta {
   background-color: #364626;
@@ -426,33 +446,18 @@ body main #fakta-kontakt #kontakt-info-container #kontakt-info .cta:hover {
 }
 body main #fakta-kontakt #om-huset-tekst-column1 {
   grid-column: 1/2;
-  grid-row: 2/3;
+  grid-row: 3/4;
   display: flex;
   flex-direction: column;
   gap: 25px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-bottom: solid 1px #364626;
 }
 @media screen and (max-width: 780px) {
   body main #fakta-kontakt #om-huset-tekst-column1 {
     grid-column: 1/2;
-    grid-row: 3/4;
-  }
-}
-body main #fakta-kontakt #om-huset-tekst-column2 {
-  grid-column: 2/4;
-  grid-row: 2/3;
-  margin-top: 75px;
-}
-@media screen and (max-width: 1140px) {
-  body main #fakta-kontakt #om-huset-tekst-column2 {
-    grid-column: 2/3;
-    margin-top: 75px;
-  }
-}
-@media screen and (max-width: 780px) {
-  body main #fakta-kontakt #om-huset-tekst-column2 {
-    grid-column: 1/2;
     grid-row: 4/5;
-    margin-top: 0;
   }
 }
 body main #fakta-kontakt .om-brodtekst {
@@ -460,8 +465,124 @@ body main #fakta-kontakt .om-brodtekst {
   flex-direction: column;
   gap: 1em;
 }
-body main #fakta2-container {
+body main #fakta-kontakt .om-brodtekst .sløret-text {
+  opacity: 70%;
+  transition: all 1s;
+}
+body main #fakta-kontakt .om-brodtekst .gemt-text {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 1s;
+}
+body main #fakta-kontakt .om-brodtekst .gemt-text.show {
+  max-height: 100%;
+}
+body main #fakta-kontakt .om-brodtekst .vis-om-text-knap {
+  margin-top: 15px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+}
+body main #fakta-kontakt .om-brodtekst .vis-om-text-knap img {
+  height: 1.5em;
+}
+body main #fakta-kontakt .om-brodtekst .vis-om-text-knap p {
+  text-decoration: underline;
+  color: black;
+}
+body main #fakta-kontakt .bg-green {
+  background-color: #F9F2D7;
+  grid-column: 1/3;
+  grid-row: 3/4;
+  z-index: -1;
+  width: 100vw;
+  position: relative;
+  margin-left: calc(-50vw + 50%);
+}
+@media screen and (max-width: 780px) {
+  body main #fakta-kontakt .bg-green {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+}
+body main #forside-galleri-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  gap: 15px;
+  max-height: 2000px;
+  margin-left: 100px;
+  margin-right: 100px;
   margin-top: 50px;
+}
+@media screen and (max-width: 900px) {
+  body main #forside-galleri-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main #forside-galleri-container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+body main #forside-galleri-container .forside-galleri-img-container {
+  overflow: hidden;
+}
+body main #forside-galleri-container .forside-galleri-img-container img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: all 0.3s;
+}
+body main #forside-galleri-container .forside-galleri-img-container img:hover {
+  scale: 101.5%;
+}
+body main #forside-galleri-container #forside-galleri-img1 {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+body main #forside-galleri-container #forside-galleri-img2 {
+  grid-column: 1/3;
+  grid-row: 2/3;
+}
+body main #forside-galleri-container #forside-galleri-img2 img {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+body main #forside-galleri-container #forside-galleri-img3 {
+  grid-column: 3/5;
+  grid-row: 1/3;
+}
+body main #forside-galleri-container #forside-galleri-img4 {
+  grid-column: 1/4;
+  grid-row: 3/4;
+}
+body main #forside-galleri-container #forside-galleri-img4 img {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+body main #forside-galleri-container #forside-galleri-img5 {
+  grid-column: 4/5;
+  grid-row: 3/4;
+}
+body main #forside-galleri-container #forside-galleri-img6 {
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+body main #forside-galleri-container #forside-galleri-img6 img {
+  -o-object-position: right;
+     object-position: right;
+}
+body main #forside-galleri-container #forside-galleri-img7 {
+  grid-column: 2/5;
+  grid-row: 4/5;
+}
+body main #fakta2-container {
   padding-left: 100px;
   padding-right: 100px;
   display: flex;
@@ -481,16 +602,16 @@ body main #fakta2-container {
   }
 }
 body main #fakta2-container #fakta-box2 {
-  border-top: solid 1px black;
-  border-bottom: solid 1px black;
   padding-top: 50px;
-  padding-bottom: 50px;
-  margin-right: 20px;
 }
 body main #fakta2-container #fakta-box2 #fakta-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
   gap: 50px;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 @media screen and (max-width: 900px) {
   body main #fakta2-container #fakta-box2 #fakta-grid {
@@ -503,6 +624,21 @@ body main #fakta2-container #fakta-box2 #fakta-grid {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
   }
+}
+body main #fakta2-container #fakta-box2 #fakta-grid .fakta2-punkt {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+body main #fakta2-container #fakta-box2 #fakta-grid .fakta2-punkt img {
+  height: 1em;
+}
+body main #fakta2-container #fakta-box2 #fakta-grid .vis-kort {
+  cursor: pointer;
+  font-size: 0.8em;
+  color: grey;
+  text-decoration: underline;
 }
 body main #fakta2-container #fakta-box2 #fakta-grid #fakta1 {
   grid-column: 1/2;
@@ -551,6 +687,17 @@ body main #fakta2-container #fakta-box2 #fakta-grid #fakta3 {
     grid-row: 3/4;
   }
 }
+body main #fakta2-container #fakta-box2 #fakta-grid .bg-beige {
+  background-color: #F9F2D7;
+  z-index: -1;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: calc(-50vw + 50%);
+}
 body main #fakta2-container .cta {
   background-color: #364626;
   color: #FEFBF3;
@@ -561,6 +708,10 @@ body main #fakta2-container .cta {
   white-space: nowrap;
   border-radius: 10px;
   align-self: center;
+  transition: all 0.3s;
+}
+body main #fakta2-container .cta:hover {
+  scale: 105%;
 }
 body main #solnedgang-section {
   margin-top: 50px;
