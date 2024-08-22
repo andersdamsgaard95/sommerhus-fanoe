@@ -11,7 +11,7 @@ Kald på mixin: @include partial.mixin-navn;
 }
 
 html {
-    font-size: 18px; //Brug rem til at gøre andre skriftstørrelser relativ til den her
+    font-size: 16px; //Brug rem til at gøre andre skriftstørrelser relativ til den her
     font-family: 'Caladea', sans-serif;
     scroll-behavior: smooth;
 }
@@ -23,24 +23,24 @@ html {
 
 p {
     font-size: 1rem;
-    color: partial.$tekst-farve;
+    //color: partial.$tekst-farve;
 }
 
 h1 {
     font-size: 2rem;
-    color: partial.$tekst-farve;
+    //color: partial.$tekst-farve;
     word-break: break-word;
 }
 
 h2 {
     font-size: 1.5rem;
-    color: partial.$tekst-farve;
+    //color: partial.$tekst-farve;
     word-break: break-word;
 }
 
 h3 {
     font-size: 1.2rem;
-    color: partial.$tekst-farve;
+    //color: partial.$tekst-farve;
     word-break: break-word;
 }
 
@@ -61,7 +61,7 @@ h3 {
 
 body {
     display: grid;
-    grid-template-rows: 80px 1fr 100px;
+    grid-template-rows: 80px 1fr 300px;
     min-height: 100vh;
     background-color: partial.$forside-baggrund;
 
@@ -83,11 +83,15 @@ body {
                             flex-direction: row;
                             gap: 10px;
                             align-items: end;
+                            border: 3px solid partial.$tekst-farve;
+                            padding: 10px;
+                            z-index: 10;
 
                                 h1 {
                                     font-family: 'Niagara Engraved', sans-serif;
                                     font-weight: normal;
                                     font-size: 2.5rem;
+                                    color: partial.$tekst-farve;
                                 }
                                 img {
                                     height: 4rem;
@@ -104,11 +108,13 @@ body {
                             @media screen and (max-width: 750px) {
                                 display: none;
                             }
-                            
+                                .active-nav {
+                                    text-decoration: underline;
+                                }
                                 a {
-                                    font-size: 1rem;
+                                    font-size: 0.8rem;
                                     text-decoration: none;
-                                    color: partial.$tekst-farve;
+                                    color: black;
                                     transition: all 0.3s;
 
                                         &:hover {
@@ -335,7 +341,7 @@ body {
                                                         width: 90%;
                                                         transform: translate(-50%, -50%);
 
-                                                        p {
+                                                        #luk-kort {
                                                             position: absolute;
                                                             top: 5px;
                                                             right: 10px;
@@ -347,7 +353,7 @@ body {
                                             }
                                     }
                                     a {
-                                        color: partial.$tekst-farve;
+                                        color: black;
                                         z-index: 1;
                                     }
                             }
@@ -377,26 +383,30 @@ body {
                                     top: 50px;
                                     display: flex;
                                     flex-direction: column;
-                                    gap: 50px;
+                                    border-radius: 10px;
                                     position: sticky;
 
                                     @media screen and (max-width: 420px) {
                                         width: 100%;
                                     }
 
-                                        h3 {
-                                            //align-self: center;
+                                        h2 {
+                                            padding-bottom: 25px;
+                                            color: partial.$tekst-farve;
                                         }
 
                                         #kontakt-box-text {
                                             display: flex;
                                             flex-direction: column;
-                                            gap: 25px;
+                                            gap: 20px;
+                                            padding-bottom: 25px;
+                                            border-bottom: solid 1px partial.$tekst-farve;
 
                                                 .kontakt-box-text-punkt {
                                                     display: flex;
                                                     flex-direction: row;
                                                     gap: 25px;
+                                                    align-items: center;
 
                                                         img {
                                                             height: 2em;
@@ -407,7 +417,12 @@ body {
                                         .cta {
                                             @include partial.cta($background-color: partial.$tekst-farve, $color: partial.$forside-baggrund,);
                                             transition: all 0.3s;
-                                            //align-self: center;
+                                            margin-top: 25px;
+                                            max-width: 100%;
+                                            padding-top: 20px;
+                                            padding-bottom: 20px;
+                                            text-align: center;
+                                            border-radius: 40px;
 
                                                 &:hover {
                                                     scale: 105%;
@@ -431,6 +446,15 @@ body {
                                 grid-column: 1/2;
                                 grid-row: 4/5;
                             }
+
+                                #om-overskrift {
+                                    //
+
+                                        p {
+                                            font-style: italic;
+                                            font-size: 0.8em;
+                                        }
+                                }
                         }
 
                         .om-brodtekst {
@@ -570,22 +594,26 @@ body {
                             //margin-right: 20px;
 
                             #fakta-grid {
-                                display: grid;
-                                grid-template-columns: 1fr 1fr 1fr;
-                                grid-template-rows: auto;
+                                //display: grid;
+                                //grid-template-columns: 1fr 1fr 1fr;
+                                //grid-template-rows: auto;
                                 gap: 50px;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                flex-wrap: wrap;
                                 position: relative;
                                 padding-top: 50px;
                                 padding-bottom: 50px;
 
-                                @media screen and (max-width: 900px) {
+                                /*@media screen and (max-width: 900px) {
                                     grid-template-columns: 1fr 1fr;
                                     grid-template-rows: auto auto;
                                 }
                                 @media screen and (max-width: 500px) {
                                     grid-template-columns: 1fr;
                                     grid-template-rows: auto auto auto;
-                                }
+                                }*/
 
                                     .fakta2-punkt {
                                         display: flex;
@@ -606,44 +634,44 @@ body {
                                     }
 
                                     #fakta1 {
-                                        grid-column: 1/2;
+                                        //grid-column: 1/2;
                                         display: flex;
                                         flex-direction: column;
                                         gap: 25px;
 
-                                        @media screen and (max-width: 900px) {
+                                        /*@media screen and (max-width: 900px) {
                                             grid-column: 1/2;
                                             grid-row: 1/2;
-                                        }
+                                        }*/
                                     }
                                     #fakta2 {
-                                        grid-column: 2/3;
+                                        //grid-column: 2/3;
                                         display: flex;
                                         flex-direction: column;
                                         gap: 25px;
 
-                                        @media screen and (max-width: 900px) {
+                                        /*@media screen and (max-width: 900px) {
                                             grid-column: 2/3;
                                             grid-row: 1/2;
                                         }
                                         @media screen and (max-width: 500px) {
                                             grid-column: 1/2;
                                             grid-row: 2/3;
-                                        }
+                                        }*/
                                     }
                                     #fakta3 {
-                                        grid-column: 3/4;
+                                        //grid-column: 3/4;
                                         display: flex;
                                         flex-direction: column;
                                         gap: 25px;
 
-                                        @media screen and (max-width: 900px) {
+                                        /*@media screen and (max-width: 900px) {
                                             grid-column: 1/2;
                                             grid-row: 2/3;
                                         }
                                         @media screen and (max-width: 500px) {
                                             grid-row: 3/4;
-                                        }
+                                        }*/
                                     }
 
                                     //Baggrundsfarve til grid
@@ -665,6 +693,7 @@ body {
                             @include partial.cta($background-color: partial.$tekst-farve, $color: partial.$forside-baggrund);
                             align-self: center;
                             transition: all 0.3s;
+                            margin-bottom: 50px;
 
                                 &:hover {
                                     scale: 105%;
@@ -673,7 +702,7 @@ body {
 
                 }
 
-                #solnedgang-section {
+                /*#solnedgang-section {
                     margin-top: 50px;
                     margin-bottom: 50px;
 
@@ -685,7 +714,7 @@ body {
                                     width: 100%;
                                 }
                         }
-                }
+                }*/
 
                 //BOOKING SIDE
                 #form-section {
@@ -750,6 +779,13 @@ body {
                             }
                             input {
                                 min-height: 3em;
+                                border-radius: 15px;
+                                border: 1px solid partial.$tekst-farve;
+                            }
+                            textarea {
+                                border-radius: 15px;
+                                padding-top: 10px;
+                                padding-bottom: 10px;
                             }
                             button {
                                 max-width: fit-content;
@@ -798,19 +834,22 @@ body {
                                 height: fit-content;
                                 display: flex;
                                 flex-direction: column;
-                                gap: 50px;
+                                gap: 25px;
                                 position: sticky;
                                 top: 50px;
+                                border-radius: 10px;
 
 
                                     #booking-info-boks-img-container {
                                         width: 100%;
                                         height: 200px;
+                                        //border-radius: 10px;
 
                                             img {
                                                 object-fit: cover;
                                                 height: 100%;
                                                 width: 100%;
+                                                border-radius: 10px 10px 0 0;
                                             }
                                     }
                                     
@@ -820,10 +859,12 @@ body {
                                         gap: 25px;
                                         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
                                         padding: 0 25px 25px 25px;
+                                        border-radius: 10px;
 
                                         h2 {
+                                            color: partial.$tekst-farve;
                                             padding-bottom: 25px;
-                                            border-bottom: 1px grey solid;
+                                            border-bottom: 1px solid partial.$tekst-farve;
                                         }
 
                                             .kontakt-box-text-punkt {
@@ -840,6 +881,278 @@ body {
                     }
                 }
 
+                //GALLERI SIDE
+                
+                //Baggrundsfarve til galleri heading
+                .galleri-heading-baggrund {
+                    background-color: partial.$detalje-farve;
+                }
+                #galleri-heading {
+                    @include partial.responsive-padding;
+                    padding-top: 50px;
+                    padding-bottom: 50px;
+                }
+
+                #galleri-section {
+                    margin-left: 15px;
+                    margin-right: 15px;
+
+                        .galleri-img-container {
+                            overflow: hidden;
+                            
+                                img {
+                                    object-fit: cover;
+                                    height: 100%;
+                                    width: 100%;
+                                }
+                        }
+
+                        //Galleri øverst
+                        #galleri-overst {
+                            display: grid;
+                            grid-template-columns: 1fr 2fr;
+                            grid-template-rows: 1fr;
+                            gap: 15px;
+                            max-height: 500px;
+
+                                #galleri-img10 {
+                                    grid-column: 1/2;
+                                    grid-row: 1/2;
+                
+                                        img {
+                                            object-position: right;
+                                        }
+                                }
+                                #galleri-img11 {
+                                    grid-column: 2/3;
+                                    grid-row: 1/2;
+                                }
+                        }
+                    
+                        //Galleri-section1
+                        #galleri-hero-imgs {
+                            display: grid;
+                            grid-template-columns: 2fr 1fr 1fr;
+                            grid-template-rows: 2fr 3fr;
+                            gap: 15px;
+                            max-height: 800px;
+                            margin-top: 15px;
+
+                                #galleri-img1 {
+                                    grid-column: 1/2;
+                                    grid-row: 1/2;
+                                }  
+                                #galleri-img2 {
+                                    grid-column: 1/2;
+                                    grid-row: 2/3;
+                                } 
+                                #galleri-img3 {
+                                    grid-column: 2/3;
+                                    grid-row: 1/3;
+                                }
+                                #galleri-img4 {
+                                    grid-column: 3/4;
+                                    grid-row: 1/3;
+                                }
+
+                        }
+
+                        //Galleri-section2
+                        #galleri-forside-galleri-imgs {
+                            display: grid;
+                            grid-template-columns: auto auto auto auto;
+                            grid-template-rows: auto auto auto;
+                            gap: 15px;
+                            max-height: 2000px;
+                            margin-top: 15px;
+
+                                .galleri-img-container {
+                                    overflow: hidden;
+                                    
+                                        img {
+                                            object-fit: cover;
+                                            height: 100%;
+                                            width: 100%;
+                                        }
+                                }
+                
+                                #galleri-img5 {
+                                    grid-column: 1/3;
+                                    grid-row: 1/2;
+                                }
+                                #galleri-img6 {
+                                    grid-column: 1/3;
+                                    grid-row: 2/3;
+                                }
+                                #galleri-img7 {
+                                    grid-column: 3/5;
+                                    grid-row: 1/3;
+
+                                        img {
+                                            object-position: bottom;
+                                        }
+                                }
+                                #galleri-img8 {
+                                    grid-column: 1/4;
+                                    grid-row: 3/4;
+                
+                                        img {
+                                            object-position: bottom;
+                                        }
+                                }
+                                #galleri-img9 {
+                                    grid-column: 4/5;
+                                    grid-row: 3/4;
+                                }
+                        }
+
+                        //Galleri-section3 (slice1)
+                        #galleri-slice1 {
+                            display: grid;
+                            grid-template-columns: auto auto auto;
+                            grid-template-rows: auto;
+                            gap: 15px;
+                            margin-top: 15px;
+
+                                #galleri-img12 {
+                                    grid-column: 1/2;
+                                    grid-row: 1/2;
+                                }
+                                #galleri-img13 {
+                                    grid-column: 2/3;
+                                    grid-row: 1/2;
+                                }
+                                #galleri-img14 {
+                                    grid-column: 3/4;
+                                    grid-row: 1/2;
+                                }
+                        }
+
+                        //Galleri-section4 (slice2)
+                        #galleri-slice2 {
+                            display: grid;
+                            grid-template-columns: auto auto auto;
+                            grid-template-rows: auto;
+                            gap: 15px;
+                            margin-top: 15px;
+
+                                #galleri-img15 {
+                                    grid-column: 1/2;
+                                    grid-row: 1/2;
+                                }
+                                #galleri-img16 {
+                                    grid-column: 2/3;
+                                    grid-row: 1/2;
+                                }
+                                #galleri-img17 {
+                                    grid-column: 3/4;
+                                    grid-row: 1/2;
+                                }
+                        }
+
+                        //Galleri-section5 (slice3)
+                        #galleri-slice3 {
+                            display: grid;
+                            grid-template-columns: 3fr 2fr;
+                            grid-template-rows: auto;
+                            gap: 15px;
+                            margin-top: 15px;
+
+                                #galleri-img18 {
+                                    grid-column: 1/2;
+                                    grid-row: 1/2;
+                                }
+                                #galleri-img19 {
+                                    grid-column: 2/3;
+                                    grid-row: 1/2;
+                                }
+                        }
+
+                         //Galleri-section6 (slice4)
+                         #galleri-slice4 {
+                            display: grid;
+                            grid-template-columns: auto auto auto;
+                            grid-template-rows: auto;
+                            gap: 15px;
+                            margin-top: 15px;
+
+                                #galleri-img20 {
+                                    grid-column: 1/2;
+                                    grid-row: 1/2;
+                                }
+                                #galleri-img21 {
+                                    grid-column: 2/3;
+                                    grid-row: 1/2;
+                                }
+                                #galleri-img22 {
+                                    grid-column: 3/4;
+                                    grid-row: 1/2;
+                                }
+                        }
+
+                        //Galleri-section7 (slice5)
+                        #galleri-slice5 {
+                            display: grid;
+                            grid-template-columns: 3fr 2fr;
+                            grid-template-rows: auto;
+                            gap: 15px;
+                            margin-top: 15px;
+                            //max-height: 600px;
+
+                                #galleri-img23 {
+                                    grid-column: 1/2;
+                                    grid-row: 1/2;
+                                }
+                                #galleri-img24 {
+                                    grid-column: 2/3;
+                                    grid-row: 1/2;
+                                    
+                                        img {
+                                            object-position: bottom;
+                                        }
+                                }
+                        }
+
+                        //Galleri-section8 (slice6)
+                        #galleri-slice6 {
+                            display: grid;
+                            grid-template-columns: auto auto;
+                            grid-template-rows: auto auto;
+                            gap: 15px;
+                            margin-top: 15px;
+
+                                #galleri-img25 {
+                                    grid-column: 1/2;
+                                    grid-row: 1/3;
+                                }
+                                #galleri-img26 {
+                                    grid-column: 2/3;
+                                    grid-row: 1/2;
+                                }
+                                #galleri-img27 {
+                                    grid-column: 2/3;
+                                    grid-row: 2/3;
+                                }
+                        }
+
+                        //BOOKING KNAP
+                        #galleri-booking-knap {
+                            margin-top: 50px;
+                            margin-bottom: 50px;
+                            display: flex;
+                            justify-content: center;
+
+                                .cta {
+                                    @include partial.cta;
+                                    transition: all 0.3s;
+
+                                        &:hover {
+                                            scale: 105%;
+                                        }
+                                }
+                        }
+                }
+
 
         } //Main slut
 
@@ -847,6 +1160,6 @@ body {
 
         footer {
             grid-row: 3/4;
-            background-color: black;
+            //background-color: partial.$detalje-farve;
         }
 }

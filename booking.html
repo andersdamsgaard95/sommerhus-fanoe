@@ -14,20 +14,20 @@
     <!--HEADER-->
     <header class="ygrid">
         <div id="global-nav" class="content">
-            <a href="#" id="logo">
+            <a href="index.html" id="logo">
                 <img src="ikoner/oesterslagpng.png" alt="">
                 <h1>Sommerhus på Fanø</h1>
             </a>
             <nav id="header-nav">
-                <a href="#">Galleri</a>
+                <a href="galleri.html">Galleri</a>
                 <a href="#">Omgivelserne</a>
-                <a href="#">Book</a>
+                <a class="active-nav" href="">Book</a>
             </nav>
             <button id="burger-menu" aria-label="Toggle menu">
                 <img src="ikoner/hamburger-menu-ikon.png" alt="">
             </button>
             <nav id="burger-nav">
-                <a href="#">Galleri</a>
+                <a href="galleri.html">Galleri</a>
                 <a href="#">Omgivelserne</a>
                 <a href="#">Book</a>
             </nav>
@@ -53,26 +53,30 @@
                         <input id="name" type="text" name="navn" required>
                     </label>
                     <label for="email">
-                        Din e-mail:
+                        Email:
                         <input id="email" type="email" name="email" required>
+                    </label>
+                    <label for="tlf">
+                        Telefon:
+                        <input id="tlf" type="text" name="tlf" required>
                     </label>
                     <div id="dato-container">
                         <label for="start-dato">
                             Ønsket ankomst dato:
-                            <input id="start-dato" type="date" name="start-dato" required>
+                            <input id="start-dato" type="date" name="start_dato" required>
                         </label>
                         <label for="hjemrejse-dato">
                             Ønsket hjemrejse dato:
-                            <input id="hjemrejse-dato" type="date" name="hjemrejse-dato" required>
+                            <input id="hjemrejse-dato" type="date" name="hjemrejse_dato" required>
                         </label>
                     </div>
                     <label for="email">
                         Antal gæster:
-                        <input id="antal-gæster" type="number" name="antal-gæster" min="1" max="6" step="1" value="1" required>
+                        <input id="antal-gæster" type="number" name="antal_gæster" min="1" max="6" step="1" value="1" required>
                     </label>
                     <label for="message">
                         Besked:
-                        <textarea id="message" name="message"></textarea>
+                        <textarea id="message" name="besked"></textarea>
                     </label>
                     <button type="submit">Send booking forespørgsel</button>
         
@@ -104,5 +108,7 @@
         </section>
     </main>
 </body>
+
+<footer></footer>
 
 </html>

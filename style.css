@@ -12,31 +12,27 @@ Kald på mixin: @include partial.mixin-navn;
 }
 
 html {
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Caladea", sans-serif;
   scroll-behavior: smooth;
 }
 
 p {
   font-size: 1rem;
-  color: #364626;
 }
 
 h1 {
   font-size: 2rem;
-  color: #364626;
   word-break: break-word;
 }
 
 h2 {
   font-size: 1.5rem;
-  color: #364626;
   word-break: break-word;
 }
 
 h3 {
   font-size: 1.2rem;
-  color: #364626;
   word-break: break-word;
 }
 
@@ -56,7 +52,7 @@ h3 {
 
 body {
   display: grid;
-  grid-template-rows: 80px 1fr 100px;
+  grid-template-rows: 80px 1fr 300px;
   min-height: 100vh;
   background-color: #FEFBF3;
 }
@@ -91,11 +87,15 @@ body header #global-nav #logo {
   flex-direction: row;
   gap: 10px;
   align-items: end;
+  border: 3px solid #364626;
+  padding: 10px;
+  z-index: 10;
 }
 body header #global-nav #logo h1 {
   font-family: "Niagara Engraved", sans-serif;
   font-weight: normal;
   font-size: 2.5rem;
+  color: #364626;
 }
 body header #global-nav #logo img {
   height: 4rem;
@@ -112,10 +112,13 @@ body header #global-nav #header-nav {
     display: none;
   }
 }
+body header #global-nav #header-nav .active-nav {
+  text-decoration: underline;
+}
 body header #global-nav #header-nav a {
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-decoration: none;
-  color: #364626;
+  color: black;
   transition: all 0.3s;
 }
 body header #global-nav #header-nav a:hover {
@@ -158,6 +161,19 @@ body header #global-nav #burger-nav a {
 }
 body main {
   grid-row: 2/3;
+  /*#solnedgang-section {
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+          #solnedgang-img-container {
+              margin-left: 20px;
+              margin-right: 20px;
+
+                  img {
+                      width: 100%;
+                  }
+          }
+  }*/
 }
 body main #hero {
   position: relative;
@@ -252,7 +268,7 @@ body main #hero #hero-container #hero-cta a {
   max-width: fit-content;
   text-decoration: none;
   white-space: nowrap;
-  border-radius: 10px;
+  border-radius: 20px;
   transition: all 0.3s;
 }
 body main #hero #hero-container #hero-cta a:hover {
@@ -372,7 +388,7 @@ body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list .fakta-
   width: 90%;
   transform: translate(-50%, -50%);
 }
-body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list .fakta-list-punkt #google-map p {
+body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list .fakta-list-punkt #google-map #luk-kort {
   position: absolute;
   top: 5px;
   right: 10px;
@@ -381,7 +397,7 @@ body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 #fakta-list .fakta-
   cursor: pointer;
 }
 body main #fakta-kontakt #fakta-box-1-container #fakta-box-1 a {
-  color: #364626;
+  color: black;
   z-index: 1;
 }
 body main #fakta-kontakt #kontakt-info-container {
@@ -409,7 +425,7 @@ body main #fakta-kontakt #kontakt-info-container #kontakt-info {
   top: 50px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  border-radius: 10px;
   position: sticky;
 }
 @media screen and (max-width: 420px) {
@@ -417,15 +433,22 @@ body main #fakta-kontakt #kontakt-info-container #kontakt-info {
     width: 100%;
   }
 }
+body main #fakta-kontakt #kontakt-info-container #kontakt-info h2 {
+  padding-bottom: 25px;
+  color: #364626;
+}
 body main #fakta-kontakt #kontakt-info-container #kontakt-info #kontakt-box-text {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
+  padding-bottom: 25px;
+  border-bottom: solid 1px #364626;
 }
 body main #fakta-kontakt #kontakt-info-container #kontakt-info #kontakt-box-text .kontakt-box-text-punkt {
   display: flex;
   flex-direction: row;
   gap: 25px;
+  align-items: center;
 }
 body main #fakta-kontakt #kontakt-info-container #kontakt-info #kontakt-box-text .kontakt-box-text-punkt img {
   height: 2em;
@@ -438,8 +461,14 @@ body main #fakta-kontakt #kontakt-info-container #kontakt-info .cta {
   max-width: fit-content;
   text-decoration: none;
   white-space: nowrap;
-  border-radius: 10px;
+  border-radius: 20px;
   transition: all 0.3s;
+  margin-top: 25px;
+  max-width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  border-radius: 40px;
 }
 body main #fakta-kontakt #kontakt-info-container #kontakt-info .cta:hover {
   scale: 105%;
@@ -459,6 +488,10 @@ body main #fakta-kontakt #om-huset-tekst-column1 {
     grid-column: 1/2;
     grid-row: 4/5;
   }
+}
+body main #fakta-kontakt #om-huset-tekst-column1 #om-overskrift p {
+  font-style: italic;
+  font-size: 0.8em;
 }
 body main #fakta-kontakt .om-brodtekst {
   display: flex;
@@ -605,25 +638,22 @@ body main #fakta2-container #fakta-box2 {
   padding-top: 50px;
 }
 body main #fakta2-container #fakta-box2 #fakta-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
   gap: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
   position: relative;
   padding-top: 50px;
   padding-bottom: 50px;
-}
-@media screen and (max-width: 900px) {
-  body main #fakta2-container #fakta-box2 #fakta-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+  /*@media screen and (max-width: 900px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
   }
-}
-@media screen and (max-width: 500px) {
-  body main #fakta2-container #fakta-box2 #fakta-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-  }
+  @media screen and (max-width: 500px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+  }*/
 }
 body main #fakta2-container #fakta-box2 #fakta-grid .fakta2-punkt {
   display: flex;
@@ -641,51 +671,38 @@ body main #fakta2-container #fakta-box2 #fakta-grid .vis-kort {
   text-decoration: underline;
 }
 body main #fakta2-container #fakta-box2 #fakta-grid #fakta1 {
-  grid-column: 1/2;
   display: flex;
   flex-direction: column;
   gap: 25px;
-}
-@media screen and (max-width: 900px) {
-  body main #fakta2-container #fakta-box2 #fakta-grid #fakta1 {
-    grid-column: 1/2;
-    grid-row: 1/2;
-  }
+  /*@media screen and (max-width: 900px) {
+      grid-column: 1/2;
+      grid-row: 1/2;
+  }*/
 }
 body main #fakta2-container #fakta-box2 #fakta-grid #fakta2 {
-  grid-column: 2/3;
   display: flex;
   flex-direction: column;
   gap: 25px;
-}
-@media screen and (max-width: 900px) {
-  body main #fakta2-container #fakta-box2 #fakta-grid #fakta2 {
-    grid-column: 2/3;
-    grid-row: 1/2;
+  /*@media screen and (max-width: 900px) {
+      grid-column: 2/3;
+      grid-row: 1/2;
   }
-}
-@media screen and (max-width: 500px) {
-  body main #fakta2-container #fakta-box2 #fakta-grid #fakta2 {
-    grid-column: 1/2;
-    grid-row: 2/3;
-  }
+  @media screen and (max-width: 500px) {
+      grid-column: 1/2;
+      grid-row: 2/3;
+  }*/
 }
 body main #fakta2-container #fakta-box2 #fakta-grid #fakta3 {
-  grid-column: 3/4;
   display: flex;
   flex-direction: column;
   gap: 25px;
-}
-@media screen and (max-width: 900px) {
-  body main #fakta2-container #fakta-box2 #fakta-grid #fakta3 {
-    grid-column: 1/2;
-    grid-row: 2/3;
+  /*@media screen and (max-width: 900px) {
+      grid-column: 1/2;
+      grid-row: 2/3;
   }
-}
-@media screen and (max-width: 500px) {
-  body main #fakta2-container #fakta-box2 #fakta-grid #fakta3 {
-    grid-row: 3/4;
-  }
+  @media screen and (max-width: 500px) {
+      grid-row: 3/4;
+  }*/
 }
 body main #fakta2-container #fakta-box2 #fakta-grid .bg-beige {
   background-color: #F9F2D7;
@@ -706,23 +723,13 @@ body main #fakta2-container .cta {
   max-width: fit-content;
   text-decoration: none;
   white-space: nowrap;
-  border-radius: 10px;
+  border-radius: 20px;
   align-self: center;
   transition: all 0.3s;
+  margin-bottom: 50px;
 }
 body main #fakta2-container .cta:hover {
   scale: 105%;
-}
-body main #solnedgang-section {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-body main #solnedgang-section #solnedgang-img-container {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-body main #solnedgang-section #solnedgang-img-container img {
-  width: 100%;
 }
 body main #form-section {
   display: grid;
@@ -802,6 +809,13 @@ body main #form-section form label {
 }
 body main #form-section form input {
   min-height: 3em;
+  border-radius: 15px;
+  border: 1px solid #364626;
+}
+body main #form-section form textarea {
+  border-radius: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 body main #form-section form button {
   max-width: -moz-fit-content;
@@ -812,7 +826,7 @@ body main #form-section form button {
   max-width: fit-content;
   text-decoration: none;
   white-space: nowrap;
-  border-radius: 10px;
+  border-radius: 20px;
   font-size: 1rem;
   cursor: pointer;
   border: 0;
@@ -855,9 +869,10 @@ body main #form-section #booking-info-boks-container #booking-info-boks {
   height: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 25px;
   position: sticky;
   top: 50px;
+  border-radius: 10px;
 }
 body main #form-section #booking-info-boks-container #booking-info-boks #booking-info-boks-img-container {
   width: 100%;
@@ -868,6 +883,7 @@ body main #form-section #booking-info-boks-container #booking-info-boks #booking
      object-fit: cover;
   height: 100%;
   width: 100%;
+  border-radius: 10px 10px 0 0;
 }
 body main #form-section #booking-info-boks-container #booking-info-boks #booking-info-boks-text {
   display: flex;
@@ -875,10 +891,12 @@ body main #form-section #booking-info-boks-container #booking-info-boks #booking
   gap: 25px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 0 25px 25px 25px;
+  border-radius: 10px;
 }
 body main #form-section #booking-info-boks-container #booking-info-boks #booking-info-boks-text h2 {
+  color: #364626;
   padding-bottom: 25px;
-  border-bottom: 1px grey solid;
+  border-bottom: 1px solid #364626;
 }
 body main #form-section #booking-info-boks-container #booking-info-boks #booking-info-boks-text .kontakt-box-text-punkt {
   display: flex;
@@ -888,7 +906,258 @@ body main #form-section #booking-info-boks-container #booking-info-boks #booking
 body main #form-section #booking-info-boks-container #booking-info-boks #booking-info-boks-text .kontakt-box-text-punkt img {
   height: 2em;
 }
+body main .galleri-heading-baggrund {
+  background-color: #F9F2D7;
+}
+body main #galleri-heading {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+@media screen and (max-width: 900px) {
+  body main #galleri-heading {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main #galleri-heading {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+body main #galleri-section {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+body main #galleri-section .galleri-img-container {
+  overflow: hidden;
+}
+body main #galleri-section .galleri-img-container img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+body main #galleri-section #galleri-overst {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  gap: 15px;
+  max-height: 500px;
+}
+body main #galleri-section #galleri-overst #galleri-img10 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-overst #galleri-img10 img {
+  -o-object-position: right;
+     object-position: right;
+}
+body main #galleri-section #galleri-overst #galleri-img11 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-hero-imgs {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 2fr 3fr;
+  gap: 15px;
+  max-height: 800px;
+  margin-top: 15px;
+}
+body main #galleri-section #galleri-hero-imgs #galleri-img1 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-hero-imgs #galleri-img2 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+body main #galleri-section #galleri-hero-imgs #galleri-img3 {
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+body main #galleri-section #galleri-hero-imgs #galleri-img4 {
+  grid-column: 3/4;
+  grid-row: 1/3;
+}
+body main #galleri-section #galleri-forside-galleri-imgs {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto;
+  gap: 15px;
+  max-height: 2000px;
+  margin-top: 15px;
+}
+body main #galleri-section #galleri-forside-galleri-imgs .galleri-img-container {
+  overflow: hidden;
+}
+body main #galleri-section #galleri-forside-galleri-imgs .galleri-img-container img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+body main #galleri-section #galleri-forside-galleri-imgs #galleri-img5 {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-forside-galleri-imgs #galleri-img6 {
+  grid-column: 1/3;
+  grid-row: 2/3;
+}
+body main #galleri-section #galleri-forside-galleri-imgs #galleri-img7 {
+  grid-column: 3/5;
+  grid-row: 1/3;
+}
+body main #galleri-section #galleri-forside-galleri-imgs #galleri-img7 img {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+body main #galleri-section #galleri-forside-galleri-imgs #galleri-img8 {
+  grid-column: 1/4;
+  grid-row: 3/4;
+}
+body main #galleri-section #galleri-forside-galleri-imgs #galleri-img8 img {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+body main #galleri-section #galleri-forside-galleri-imgs #galleri-img9 {
+  grid-column: 4/5;
+  grid-row: 3/4;
+}
+body main #galleri-section #galleri-slice1 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  gap: 15px;
+  margin-top: 15px;
+}
+body main #galleri-section #galleri-slice1 #galleri-img12 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-slice1 #galleri-img13 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-slice1 #galleri-img14 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-slice2 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  gap: 15px;
+  margin-top: 15px;
+}
+body main #galleri-section #galleri-slice2 #galleri-img15 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-slice2 #galleri-img16 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-slice2 #galleri-img17 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-slice3 {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: auto;
+  gap: 15px;
+  margin-top: 15px;
+}
+body main #galleri-section #galleri-slice3 #galleri-img18 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-slice3 #galleri-img19 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-slice4 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  gap: 15px;
+  margin-top: 15px;
+}
+body main #galleri-section #galleri-slice4 #galleri-img20 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-slice4 #galleri-img21 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-slice4 #galleri-img22 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-slice5 {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: auto;
+  gap: 15px;
+  margin-top: 15px;
+}
+body main #galleri-section #galleri-slice5 #galleri-img23 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-slice5 #galleri-img24 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-slice5 #galleri-img24 img {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+body main #galleri-section #galleri-slice6 {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  gap: 15px;
+  margin-top: 15px;
+}
+body main #galleri-section #galleri-slice6 #galleri-img25 {
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+body main #galleri-section #galleri-slice6 #galleri-img26 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+body main #galleri-section #galleri-slice6 #galleri-img27 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+body main #galleri-section #galleri-booking-knap {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+body main #galleri-section #galleri-booking-knap .cta {
+  background-color: #364626;
+  color: #FEFBF3;
+  padding: 10px 30px 10px 30px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+body main #galleri-section #galleri-booking-knap .cta:hover {
+  scale: 105%;
+}
 body footer {
   grid-row: 3/4;
-  background-color: black;
 }/*# sourceMappingURL=style.css.map */
