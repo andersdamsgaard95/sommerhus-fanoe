@@ -97,6 +97,11 @@ body header #global-nav #logo h1 {
   font-size: 2.5rem;
   color: #364626;
 }
+@media screen and (max-width: 400px) {
+  body header #global-nav #logo h1 {
+    font-size: 2rem;
+  }
+}
 body header #global-nav #logo img {
   height: 4rem;
 }
@@ -161,19 +166,6 @@ body header #global-nav #burger-nav a {
 }
 body main {
   grid-row: 2/3;
-  /*#solnedgang-section {
-      margin-top: 50px;
-      margin-bottom: 50px;
-
-          #solnedgang-img-container {
-              margin-left: 20px;
-              margin-right: 20px;
-
-                  img {
-                      width: 100%;
-                  }
-          }
-  }*/
 }
 body main #hero {
   position: relative;
@@ -284,6 +276,7 @@ body main #fakta-kontakt {
   margin-top: 50px;
   margin-left: 100px;
   margin-right: 100px;
+  position: relative;
 }
 @media screen and (max-width: 900px) {
   body main #fakta-kontakt {
@@ -525,17 +518,21 @@ body main #fakta-kontakt .om-brodtekst .vis-om-text-knap p {
   text-decoration: underline;
   color: black;
 }
-body main #fakta-kontakt .bg-green {
+body main #fakta-kontakt .bg-beige-omhuset {
   background-color: #F9F2D7;
   grid-column: 1/3;
   grid-row: 3/4;
   z-index: -1;
   width: 100vw;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   margin-left: calc(-50vw + 50%);
 }
 @media screen and (max-width: 780px) {
-  body main #fakta-kontakt .bg-green {
+  body main #fakta-kontakt .bg-beige-omhuset {
     grid-column: 1/2;
     grid-row: 4/5;
   }
@@ -757,7 +754,7 @@ body main #fakta2-container #fakta-box2 #fakta-grid #fakta3 {
       grid-row: 3/4;
   }*/
 }
-body main #fakta2-container #fakta-box2 #fakta-grid .bg-beige {
+body main #fakta2-container #fakta-box2 #fakta-grid .bg-beige-fakta {
   background-color: #F9F2D7;
   z-index: -1;
   width: 100vw;
@@ -793,6 +790,7 @@ body main #form-section {
   row-gap: 50px;
   padding-left: 100px;
   padding-right: 100px;
+  position: relative;
 }
 @media screen and (max-width: 900px) {
   body main #form-section {
@@ -831,7 +829,11 @@ body main #form-section #booking-side-tekst-bg {
   grid-column: 1/3;
   grid-row: 1/2;
   z-index: -1;
-  position: relative;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
 }
@@ -979,9 +981,22 @@ body main #galleri-section #galleri-overst {
   gap: 15px;
   max-height: 500px;
 }
+@media screen and (max-width: 500px) {
+  body main #galleri-section #galleri-overst {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: none;
+  }
+}
 body main #galleri-section #galleri-overst #galleri-img10 {
   grid-column: 1/2;
   grid-row: 1/2;
+}
+@media screen and (max-width: 500px) {
+  body main #galleri-section #galleri-overst #galleri-img10 {
+    order: 2;
+  }
 }
 body main #galleri-section #galleri-overst #galleri-img10 img {
   -o-object-position: right;
@@ -998,6 +1013,14 @@ body main #galleri-section #galleri-hero-imgs {
   gap: 15px;
   max-height: 800px;
   margin-top: 15px;
+}
+@media screen and (max-width: 500px) {
+  body main #galleri-section #galleri-hero-imgs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: none;
+  }
 }
 body main #galleri-section #galleri-hero-imgs #galleri-img1 {
   grid-column: 1/2;
@@ -1022,6 +1045,14 @@ body main #galleri-section #galleri-forside-galleri-imgs {
   gap: 15px;
   max-height: 2000px;
   margin-top: 15px;
+}
+@media screen and (max-width: 500px) {
+  body main #galleri-section #galleri-forside-galleri-imgs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: none;
+  }
 }
 body main #galleri-section #galleri-forside-galleri-imgs .galleri-img-container {
   overflow: hidden;
@@ -1067,6 +1098,13 @@ body main #galleri-section #galleri-slice1 {
   gap: 15px;
   margin-top: 15px;
 }
+@media screen and (max-width: 500px) {
+  body main #galleri-section #galleri-slice1 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
 body main #galleri-section #galleri-slice1 #galleri-img12 {
   grid-column: 1/2;
   grid-row: 1/2;
@@ -1085,6 +1123,13 @@ body main #galleri-section #galleri-slice2 {
   grid-template-rows: auto;
   gap: 15px;
   margin-top: 15px;
+}
+@media screen and (max-width: 500px) {
+  body main #galleri-section #galleri-slice2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 body main #galleri-section #galleri-slice2 #galleri-img15 {
   grid-column: 1/2;
@@ -1105,6 +1150,13 @@ body main #galleri-section #galleri-slice3 {
   gap: 15px;
   margin-top: 15px;
 }
+@media screen and (max-width: 500px) {
+  body main #galleri-section #galleri-slice3 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
 body main #galleri-section #galleri-slice3 #galleri-img18 {
   grid-column: 1/2;
   grid-row: 1/2;
@@ -1119,6 +1171,13 @@ body main #galleri-section #galleri-slice4 {
   grid-template-rows: auto;
   gap: 15px;
   margin-top: 15px;
+}
+@media screen and (max-width: 500px) {
+  body main #galleri-section #galleri-slice4 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 body main #galleri-section #galleri-slice4 #galleri-img20 {
   grid-column: 1/2;
@@ -1139,6 +1198,13 @@ body main #galleri-section #galleri-slice5 {
   gap: 15px;
   margin-top: 15px;
 }
+@media screen and (max-width: 500px) {
+  body main #galleri-section #galleri-slice5 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
 body main #galleri-section #galleri-slice5 #galleri-img23 {
   grid-column: 1/2;
   grid-row: 1/2;
@@ -1157,6 +1223,13 @@ body main #galleri-section #galleri-slice6 {
   grid-template-rows: auto auto;
   gap: 15px;
   margin-top: 15px;
+}
+@media screen and (max-width: 500px) {
+  body main #galleri-section #galleri-slice6 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 body main #galleri-section #galleri-slice6 #galleri-img25 {
   grid-column: 1/2;
@@ -1193,12 +1266,20 @@ body main #galleri-section #galleri-booking-knap .cta:hover {
 body main #omgivelser-hero {
   margin-left: 25px;
   margin-right: 25px;
-  margin-bottom: 25px;
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-template-rows: 4fr 3fr;
   gap: 15px;
   max-height: 650px;
+  min-height: 400px;
+}
+@media screen and (max-width: 700px) {
+  body main #omgivelser-hero {
+    margin-left: 10px;
+    margin-right: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 }
 body main #omgivelser-hero #omgivelser-img1-container {
   grid-row: 1/2;
@@ -1216,6 +1297,11 @@ body main #omgivelser-hero #omgivelser-img2-container {
   grid-column: 1/2;
   overflow: hidden;
 }
+@media screen and (max-width: 700px) {
+  body main #omgivelser-hero #omgivelser-img2-container {
+    display: none;
+  }
+}
 body main #omgivelser-hero #omgivelser-img2-container img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1227,6 +1313,11 @@ body main #omgivelser-hero #omgivelser-img3-container {
   grid-column: 2/3;
   overflow: hidden;
 }
+@media screen and (max-width: 700px) {
+  body main #omgivelser-hero #omgivelser-img3-container {
+    display: none;
+  }
+}
 body main #omgivelser-hero #omgivelser-img3-container img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1234,14 +1325,14 @@ body main #omgivelser-hero #omgivelser-img3-container img {
   width: 100%;
 }
 body main #omgivelser {
-  padding-top: 25px;
   padding-left: 100px;
   padding-right: 100px;
   display: grid;
-  grid-template-columns: 3fr 2fr;
-  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto 600px auto auto;
   -moz-column-gap: 100px;
        column-gap: 100px;
+  position: relative;
 }
 @media screen and (max-width: 900px) {
   body main #omgivelser {
@@ -1255,16 +1346,38 @@ body main #omgivelser {
     padding-right: 10px;
   }
 }
+@media screen and (max-width: 900px) {
+  body main #omgivelser {
+    -moz-column-gap: 50px;
+         column-gap: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main #omgivelser {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+  }
+}
 body main #omgivelser .bg-beige {
   background-color: #F9F2D7;
   grid-column: 1/3;
-  grid-row: 1/2;
-  position: relative;
+  grid-row: 2/3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   z-index: -1;
 }
-body main #omgivelser #omgivelser-tekst-container {
+@media screen and (max-width: 700px) {
+  body main #omgivelser .bg-beige {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+}
+body main #omgivelser #omgivelser-tekst-container1 {
   margin-top: 50px;
   margin-bottom: 50px;
   grid-column: 1/2;
@@ -1275,34 +1388,129 @@ body main #omgivelser #omgivelser-tekst-container {
 }
 body main #omgivelser #omgivelser-sticky-img-container {
   grid-column: 2/3;
-  grid-row: 1/3;
+  grid-row: 1/4;
+}
+@media screen and (max-width: 700px) {
+  body main #omgivelser #omgivelser-sticky-img-container {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
 }
 body main #omgivelser #omgivelser-sticky-img-container div {
   margin-top: 50px;
-  height: 400px;
+  margin-bottom: 50px;
+  height: 500px;
   position: sticky;
   top: 50px;
   right: 0;
-  border-radius: 100%;
-  overflow: hidden;
+}
+@media screen and (max-width: 700px) {
+  body main #omgivelser #omgivelser-sticky-img-container div {
+    margin-top: 0;
+  }
 }
 body main #omgivelser #omgivelser-sticky-img-container div img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   height: 100%;
   width: 100%;
 }
-body main #omgivelser #tekst-til-visitfanoe {
+body main #omgivelser #omgivelser-tekst-container2 {
   margin-top: 50px;
+  margin-bottom: 50px;
   grid-column: 1/2;
   grid-row: 2/3;
   display: flex;
   flex-direction: column;
   gap: 50px;
 }
-body main #omgivelser #tekst-til-visitfanoe a {
+@media screen and (max-width: 700px) {
+  body main #omgivelser #omgivelser-tekst-container2 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+}
+body main #omgivelser #omgivelser-tekst-container2 a {
   color: black;
   text-decoration: underline;
+}
+body main #omgivelser #omgivelser-sticky-img-container2 {
+  grid-column: 1/2;
+  grid-row: 3/6;
+}
+@media screen and (max-width: 700px) {
+  body main #omgivelser #omgivelser-sticky-img-container2 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+}
+body main #omgivelser #omgivelser-sticky-img-container2 div {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 500px;
+  position: sticky;
+  top: 50px;
+  left: 0;
+}
+@media screen and (max-width: 700px) {
+  body main #omgivelser #omgivelser-sticky-img-container2 div {
+    height: auto;
+  }
+}
+body main #omgivelser #omgivelser-sticky-img-container2 div img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+body main #omgivelser .bg-beige2 {
+  background-color: #F9F2D7;
+  grid-column: 1/3;
+  grid-row: 4/5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  z-index: -1;
+}
+@media screen and (max-width: 700px) {
+  body main #omgivelser .bg-beige2 {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+}
+body main #omgivelser #omgivelser-tekst-container3 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  grid-column: 2/3;
+  grid-row: 4/5;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+@media screen and (max-width: 700px) {
+  body main #omgivelser #omgivelser-tekst-container3 {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+}
+body main #omgivelser #omgivelser-tekst-container4 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  grid-column: 2/3;
+  grid-row: 5/6;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+@media screen and (max-width: 700px) {
+  body main #omgivelser #omgivelser-tekst-container4 {
+    grid-column: 1/2;
+    grid-row: 6/7;
+  }
 }
 body footer {
   grid-row: 3/4;
