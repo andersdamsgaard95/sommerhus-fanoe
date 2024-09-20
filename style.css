@@ -1493,6 +1493,8 @@ body main #omgivelser #omgivelser-tekst-container1 {
 body main #omgivelser #omgivelser-sticky-img-container {
   grid-column: 2/3;
   grid-row: 1/3;
+  display: flex;
+  align-items: center;
 }
 @media screen and (max-width: 700px) {
   body main #omgivelser #omgivelser-sticky-img-container {
@@ -1503,10 +1505,8 @@ body main #omgivelser #omgivelser-sticky-img-container {
 body main #omgivelser #omgivelser-sticky-img-container div {
   margin-top: 50px;
   margin-bottom: 50px;
-  height: 500px;
-  position: sticky;
-  top: 50px;
-  right: 0;
+  height: 600px;
+  width: 100%;
 }
 @media screen and (max-width: 700px) {
   body main #omgivelser #omgivelser-sticky-img-container div {
@@ -1541,6 +1541,8 @@ body main #omgivelser #omgivelser-tekst-container2 a {
 body main #omgivelser #omgivelser-sticky-img-container2 {
   grid-column: 1/2;
   grid-row: 3/5;
+  display: flex;
+  align-items: center;
 }
 @media screen and (max-width: 700px) {
   body main #omgivelser #omgivelser-sticky-img-container2 {
@@ -1551,10 +1553,8 @@ body main #omgivelser #omgivelser-sticky-img-container2 {
 body main #omgivelser #omgivelser-sticky-img-container2 div {
   margin-top: 50px;
   margin-bottom: 50px;
-  height: 500px;
-  position: sticky;
-  top: 50px;
-  left: 0;
+  height: 600px;
+  width: 100%;
 }
 @media screen and (max-width: 700px) {
   body main #omgivelser #omgivelser-sticky-img-container2 div {
